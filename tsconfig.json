@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    
+    "resolveJsonModule": true,  // This allows importing JSON files
+    "baseUrl": "src",
+    "paths": {
+      "@assets/*": ["assets/*"],
+      "@components/*": ["components/*"],
+      "@constants/*": ["constants/*"],
+      "@hoc/*": ["hoc/*"],
+      "@hooks/*": ["hooks/*"],
+      "@localization/*": ["localization/*"],
+      "@pages/*": ["pages/*"],
+      "@routes/*": ["routes/*"],
+      "@store/*": ["store/*"],
+      "@theme/*": ["theme/*"],
+      "@utils/*": ["utils/*"]
+    },
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "esModuleInterop": true
+  },
+  "include": ["src"]
+}

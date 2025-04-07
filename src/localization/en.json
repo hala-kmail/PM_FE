@@ -1,0 +1,90 @@
+{  
+  "general":{
+   "internaalServerError":"An error occurred, please try again later",
+    "true" : "true",
+    "false":"false",
+    "edit":"edit",
+    "deactivate":"deactivate",
+    "delete":"delete",
+    "add":"Add"
+},
+  "auth":{
+    "since_2024":"Since 2024",
+    "login":"login",
+    "signUp":"sign up",
+    "username": "ID Number",
+    "password": "password",
+    "submit": "sign up",
+    "rememberMe":"remember me",
+    "invalidCredentials":"Invalid username or password"
+  },
+  "dashboard": {
+    "greeting": "Hello, {{name}}! 👋"
+  },
+    "validation": {
+      "usernameRequired": "Please enter your username",
+      "passwordRequired": "Please enter your password",
+      "userForm" : {
+        "fullNameRequired": "Please enter the full name!" , 
+        "usernameRequired": "Please enter the username!" ,
+        "emailRequired": "Please enter the email address!",
+        "phoneNumberRequired": "Please enter the mobile number!",
+        "addressRequired": "Please enter the address!",
+        "idNoRequired": "Please enter the Id card number!"
+      }
+    },
+  "sideBar":{
+      "profile": "My Profile",
+      "users":"Users",
+      "dashboard":"Dashboard",
+      "add":"Add New User",
+      "groups":"groups",
+      "GroupScheduale":"Group Scheduale"
+   },
+  "user": {
+      "idNo": "ID Number",
+      "username": "Username",
+      "email": "Email",
+      "fullName":"Full Name",
+      "first_name": "First Name",
+      "second_name": "Second Name",
+      "third_name": "Third Name",
+      "last_name": "Last Name",
+      "phoneNumber": "Phone Number",
+      "address": "Address",
+      "joinDate": "joinDate",
+      "updated_at": "Updated At",
+       "is_superuser":"Is Superuser?",
+      "is_active":"Is Active?",
+      "active":"active",
+      "not_active":"Not Active",
+      "superuser":"Super User",
+      "deactivate":"deactivate"
+    },
+    "dialog":{
+      "enure_deactivate":"Are you sure you want to deactivate this user?",
+      "confirm":"Confirm",
+      "cancel":"Cancel",
+      "add": "Add",
+      "addNewUser": "Add New User"
+    },
+    "fields":{
+      "id_no":"ID Number",
+      "email":"Email",
+      "username":"Username",
+      "first_name": "First Name",
+     "second_name": "Second Name",
+      "third_name": "Third Name",
+      "last_name": "Last Name",
+      "gender" : "Gender",
+      "password":"password",
+      "name":"name",
+      "address":"address",
+      "phone_number":"phone number",
+      "idno":"ID Number",
+      "role":"role",
+      "birth_date":"birth date",
+
+      "group_id":"group id"    
+    }
+}
