@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const Card = () => {
   return (
@@ -9,7 +9,7 @@ const Card = () => {
      
       
             <img
-              src="/bulkofmoney.png"  // Removed "public" from path
+              src="src/assets/bulkofmoney.png"  // Removed "public" from path
               alt="Logo"
               className="h-20 w-20 rounded-sm border-2 border-[#707070]" // Added white border
             />
@@ -30,7 +30,7 @@ const Card = () => {
      
       
             <img
-              src="/salary.png"  // Removed "public" from path
+              src="src/assets/salary.png"  // Removed "public" from path
               alt="Logo"
               className="h-20 w-20 rounded-sm border-2 border-[#707070]" // Added white border
             />
@@ -51,7 +51,7 @@ const Card = () => {
      
       
             <img
-              src="/bag.png"  // Removed "public" from path
+              src="src/assets/bag.png"  // Removed "public" from path
               alt="Logo"
               className="h-20 w-20 rounded-sm border-2 border-[#707070]" // Added white border
             />

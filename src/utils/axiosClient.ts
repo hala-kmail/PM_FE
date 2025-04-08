@@ -1,43 +1,54 @@
-import axios, { AxiosInstance } from 'axios';
-import { BASE_URL } from '../constants/api';
-import { CONFIG } from '../constants/config';
-let axiosInstance: AxiosInstance | null = null;
+// import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
+// import { BASE_URL } from '../constants/api';
+// import { CONFIG } from '../constants/config';
 
-export const getAxiosInstance = (): AxiosInstance => {
-    if (!axiosInstance) {
-        axiosInstance = axios.create({
-            baseURL: BASE_URL, // Use environment variables
-            timeout: 10000,
-            headers: {
-                'Content-Type': 'application/json',
-                'X-API-Key':CONFIG.apiKey
-            },
-        });
-        axiosInstance.interceptors.request.use(
-            (config) => {
-                const token = JSON.parse(localStorage.getItem('token') || 'null');
-                if (token) {
-                    config.headers.Authorization = token;
-                }
-                return config;
-            },
-            (error) => Promise.reject(error)
-        );
+// let axiosInstance: AxiosInstance | null = null;
 
-        axiosInstance.interceptors.response.use(
-            (response) => response,
-            (error) => {
-                if (error.response) {
-                    if (error.response.status === 401) {
-                        localStorage.removeItem('token');
-                        window.location.href = '/login';
-                    }
-                } else {
-                    console.error('Network Error:', error.message);
-                }
-                return Promise.reject(error);
-            }
-        );
-    }
-    return axiosInstance;
-};
+// export const getAxiosInstance = (): AxiosInstance => {
+//     if (!axiosInstance) {
+//         axiosInstance = axios.create({
+//             baseURL: BASE_URL,
+//             timeout: 10000,
+//             headers: {
+//                 'Content-Type': 'application/json',
+//                 'X-API-Key': CONFIG.apiKey
+//             },
+//         });
+
+//         // Request interceptor
+//         axiosInstance.interceptors.request.use(
+//             (config: AxiosRequestConfig) => {
+//                 const token = localStorage.getItem('token');
+//                 if (token) {
+//                     try {
+//                         const parsedToken = JSON.parse(token);
+//                         config.headers = config.headers || {};
+//                         config.headers.Authorization = `Bearer ${parsedToken}`;
+//                     } catch (error) {
+//                         console.error('Error parsing token:', error);
+//                         localStorage.removeItem('token');
+//                     }
+//                 }
+//                 return config;
+//             },
+//             (error: AxiosError) => Promise.reject(error)
+//         );
+
+//         // Response interceptor
+//         axiosInstance.interceptors.response.use(
+//             (response: AxiosResponse) => response,
+//             (error: AxiosError) => {
+//                 if (error.response) {
+//                     if (error.response.status === 401) {
+//                         localStorage.removeItem('token');
+//                         window.location.href = '/login';
+//                     }
+//                 } else {
+//                     console.error('Network Error:', error.message);
+//                 }
+//                 return Promise.reject(error);
+//             }
+//         );
+//     }
+//     return axiosInstance;
+// };

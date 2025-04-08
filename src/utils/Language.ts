@@ -1,7 +1,7 @@
-import { createTheme, ThemeProvider, Theme } from "@mui/material/styles";
+import { createTheme} from "@mui/material/styles";
 import rtlPlugin from "stylis-plugin-rtl";
 import { prefixer } from "stylis";
-import { CacheProvider } from "@emotion/react";
+// import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
 
 export const changeLang = (i18n: any): void => {

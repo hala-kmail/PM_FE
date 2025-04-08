@@ -27,4 +27,22 @@ export interface LogInFormValues {
     icon: ElementType;
     path: string;
   }
-  
+  export type SidebarProps = {
+    menu: MenuItem[];
+    onItemClick: (path: string) => void;
+  };
+  export type TopNavbarProps = {
+    userName: string;
+    userPosition: string;
+    language: string;
+    onLanguageToggle: () => void;
+  };
+
+  export interface BeforeInstallPromptEvent extends Event {
+    prompt: () => void;
+    userChoice: Promise<{ outcome: string }>;
+  }
+export interface DropdownMenuProps {
+  showInstall: boolean;
+  handleInstallClick: () => void;
+}

@@ -18,6 +18,7 @@ const data = [
   { name: "Page E", read1: 700, read2: 800, read3: 900, read4: 1000 },
   { name: "Page F", read1: 1300, read2: 1400, read3: 1500, read4: 1600 },
   { name: "Page G", read1: 800, read2: 1000, read3: 1200, read4: 1400 },
+  { name: "Page G", read1: 800, read2: 1000, read3: 1200, read4: 1400 },
 ];
 
 // المكون
@@ -27,14 +28,14 @@ const Chart = () => {
       {/* البادجات التعريفية */}
     
       <div className="flex gap-2 m-7">
-      <span className="mr-8 font-[Poppins] font-extrabold text-[16px] leading-[100%] tracking-[0%]">
+      <span className="mr-8 font-[Poppins] font-extrabold text-[16px] leading-[100%] tracking-[0%] text-[#4D4D4D]">
   Task By Intitiy
 </span>
 
         <div className="flex flex-row gap-4">
        
-        <span className="px-3 py-1 rounded-sm text-[#023047] text-sm gap-4">
-        <span className="px-5 py-1 rounded-sm text-white text-sm mr-2" style={{ backgroundColor: "#023047" }}>
+        <span className="px-3  rounded-sm text-[#023047] text-sm gap-4">
+        <span className="px-3  rounded-sm text-white text-sm mr-2" style={{ backgroundColor: "#023047" }}>
           
           </span>
         Not Due
@@ -42,8 +43,8 @@ const Chart = () => {
         </div>
         <div className="flex flex-row gap-4">
        
-       <span className="px-3 py-1 rounded-sm text-[#C89E4F] text-sm gap-4">
-       <span className="px-5 py-1 rounded-sm text-white text-sm mr-2" style={{ backgroundColor: "#C89E4F" }}>
+       <span className="px-3  rounded-sm text-[#C89E4F] text-sm gap-4">
+       <span className="px-3  rounded-sm text-white text-sm mr-2" style={{ backgroundColor: "#C89E4F" }}>
          
          </span>
          Over Due
@@ -51,8 +52,8 @@ const Chart = () => {
        </div>
        <div className="flex flex-row gap-4">
        
-       <span className="px-3 py-1 rounded-sm text-[#4D4D4D] text-sm gap-4">
-       <span className="px-5 py-1 rounded-sm text-white text-sm mr-2" style={{ backgroundColor: "#4D4D4D" }}>
+       <span className="px-3  rounded-sm text-[#4D4D4D] text-sm gap-4">
+       <span className="px-3  rounded-sm text-white text-sm mr-2" style={{ backgroundColor: "#4D4D4D" }}>
          
          </span>
          Started
@@ -60,8 +61,8 @@ const Chart = () => {
        </div>
        <div className="flex flex-row gap-4">
        
-       <span className="px-3 py-1 rounded-sm text-[#707070] text-sm gap-4">
-       <span className="px-5 py-1 rounded-sm text-white text-sm mr-2" style={{ backgroundColor: "#707070" }}>
+       <span className="px-3  rounded-sm text-[#707070] text-sm gap-4">
+       <span className="px-3  rounded-sm text-white text-sm mr-2" style={{ backgroundColor: "#707070" }}>
          
          </span>
          Running
