@@ -9,7 +9,10 @@ export const theme = {
   text: '#4D4D4D', // Dark gray for text
   cardColor: '#E6F6FE', // Very light blue
   projectDurationGray:'#505572',
-  black:"#292D32"
+  black:"#292D32",
+ buttonGraytext:'#707070',
+  buttonGrayborder:'#BFBFBF',
+   buttonGraybg:'#F1F1F1'
 };
 
 export type Theme = typeof theme;

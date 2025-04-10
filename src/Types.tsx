@@ -27,10 +27,13 @@ export interface LogInFormValues {
     icon: ElementType;
     path: string;
   }
-  export type SidebarProps = {
+  export interface SidebarProps {
     menu: MenuItem[];
     onItemClick: (path: string) => void;
-  };
+    isOpen: boolean;
+    toggleSidebar: () => void;
+  }
+  
   export type TopNavbarProps = {
     userName: string;
     userPosition: string;
@@ -45,4 +48,28 @@ export interface LogInFormValues {
 export interface DropdownMenuProps {
   showInstall: boolean;
   handleInstallClick: () => void;
+}
+// Define types for the component props
+export interface ProjectCardProps {
+  directorate: string;
+  title: string;
+  description: string;
+  program: string;
+  projectManager: string;
+  riskLevel: string;
+  progress: number;
+}
+
+export interface PROJECT {
+  directorate: string;
+  title: string;
+  description: string;
+  program: string;
+  projectManager: string;
+  riskLevel: string;
+  progress: number;
+}
+export interface FilterDrawerProps {
+  isOpen: boolean;
+  onClose: () => void;
 }

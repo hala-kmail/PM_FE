@@ -1,58 +1,47 @@
-import { MenuItem } from "./Types";
-import { getMenuAsText, MenuModel } from "./constants/sideBarData";
-
-import { useState } from "react";
-import Sidebar from "./components/common/navigation/sidebar";
-import TopNavbar from "./components/common/navigation/topNav";
-// import { useTranslation } from "react-i18next";
-import Routers from "./routers";
-import { BrowserRouter } from "react-router-dom";
+import Sidebar from './components/common/navigation/sidebar';
+import TopNavbar from './components/common/navigation/topNav';
+import Routers from './routers/route';
+import useNavigation from './hook/navigationLogic';
+import useMenu from './hook/MenuLogic';
+import  useSidebar from './hook/SidemenueLogic';// استخدام Hook الشريط الجانبي
+import useLanguage from './hook/laguageLogic'; // استخدام Hook اللغة
 
 function App() {
-  const [activeMenu] = useState<'text' | 'model'>('text'); // Keep only what you need
-  const [language, setLanguage] = useState<'ENGLISH' | 'ARABIC'>('ENGLISH');
-  // const { i18n } = useTranslation();
-
-  const toggleLanguage = () => {
-    setLanguage((prev) => (prev === 'ENGLISH' ? 'ARABIC' : 'ENGLISH'));
-  };
-
-  const getMenuItems = (): MenuItem[] => {
-    switch (activeMenu) {
-      case 'model':
-        return MenuModel.getInstance().getMenuItems();
-      case 'text':
-      default:
-        return getMenuAsText();
-    }
-  };
+  const { navigateTo } = useNavigation(); // Hook التنقل
+  const { getMenuItems } = useMenu(); // Hook القوائم
+  const { sidebarOpen, toggleSidebar } = useSidebar(); // Hook الشريط الجانبي
+  const { language, toggleLanguage } = useLanguage(); // Hook اللغة
 
   const handleItemClick = (path: string) => {
-    console.log('Navigating to:', path);
+    navigateTo(path); // استخدام التنقل
   };
 
   return (
-    <div className="flex min-h-screen" style={{ backgroundColor: "#F9F9F9" }}>
-      {/* Sidebar - fixed width */}
-      <Sidebar menu={getMenuItems()}
-       onItemClick={handleItemClick}
-        
-
+    <div className="flex min-h-screen bg-[#F9F9F9]">
+      {/* Sidebar */}
+      <Sidebar
+        menu={getMenuItems()}
+        onItemClick={handleItemClick}
+        isOpen={sidebarOpen}
+        toggleSidebar={toggleSidebar}
       />
-      <div className="flex flex-col flex-1 ml-64">
-        {/* TopNavbar - make it sticky */}
+
+      {/* المحتوى الرئيسي */}
+      <div
+        className={`
+          flex flex-col flex-1 transition-all duration-300
+          ${sidebarOpen ? 'ml-64' : 'ml-0'} 
+          md:ml-64
+        `}
+      >
         <TopNavbar
           userName="Mai Shalabi"
           userPosition="last sign in in 25 feb 2025"
           language={language}
-          onLanguageToggle={toggleLanguage}
-  
+          onLanguageToggle={toggleLanguage} // تمرير الـ toggleLanguage
         />
-        {/* Main content with scroll */}
-        <main className="py-10  ">
-          <BrowserRouter>
-            <Routers />
-          </BrowserRouter>
+        <main className="py-10">
+          <Routers />
         </main>
       </div>
     </div>
