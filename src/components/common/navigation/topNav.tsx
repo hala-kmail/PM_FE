@@ -3,7 +3,7 @@ import { ArrowCircleDownIcon, ArrowCircleUpIcon } from '@heroicons/react/outline
 import DropdownMenu from './dropDown';
 import { TopNavbarProps } from '../../../Types';
 import { useTopNavbar } from '../../../hook/TopNavlogic';
-import user from 'src/assets/user.jpg';
+import user from '../../../assets/user.jpg';
 const TopNavbar: React.FC<TopNavbarProps> = ({
   userName,
   userPosition,

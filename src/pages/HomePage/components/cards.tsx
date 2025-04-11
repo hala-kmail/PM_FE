@@ -1,7 +1,7 @@
 
-import bulk from 'src/assets/bulkofmoney.png';
-import salary from 'src/assets/salary.png';
-import bag from "src/assets/bag.png" ;
+import bulk from '../../../assets/bulkofmoney.png';
+import salary from '../../../assets/salary.png';
+import bag from "../../../assets/bag.png" ;
 const Card = () => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">

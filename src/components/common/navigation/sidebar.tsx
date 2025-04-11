@@ -2,7 +2,9 @@ import React from 'react';
 import { ChevronRightIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
 import { SidebarProps } from '../../../Types';
 import useActivePath from '../../../hook/ActivePathLogic';
-import logo from 'src/assets/logo.png';
+import logo from '../../../assets/logo.png';
+
+
 const Sidebar: React.FC<SidebarProps> = ({ menu, onItemClick, isOpen, toggleSidebar }) => {
   const { activePath, setActivePath } = useActivePath(); // استخدام الهوك
 
