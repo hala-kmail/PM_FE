@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import CustomSelect from '../componant/CustomselectList';
 import { Option } from '../../../../../components/common/formComponant/selectList';
 import { ChevronDown } from "lucide-react";
-import CustomInput from '../componant/CustomInput';
-import CustomSlider from '../componant/CustomSlideBar';
+
 import CustomTextarea from '../componant/CustomTextArea';
 
 const Strategic_Alignment: React.FC = () => {
     const [selected, setSelected] = useState<string | number>("");
-  const [formData, setFormData] = useState({
+  const [formData] = useState({
     row1Field1: '',
     row1Field2: '',
     row2Field1: '',
@@ -21,12 +20,9 @@ const Strategic_Alignment: React.FC = () => {
     { label: "Banana", value: "banana" },
     { label: "Cherry", value: "cherry" },
   ];
-  const [showInput, setShowInput] = useState(false);
+  const [] = useState(false);
 
   // Handle slider toggle
-  const handleToggle = () => {
-    setShowInput((prev) => !prev);
-  };
 
 
   const handleSubmit = (e: React.FormEvent) => {

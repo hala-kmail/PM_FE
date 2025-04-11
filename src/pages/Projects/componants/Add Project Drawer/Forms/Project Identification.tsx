@@ -7,7 +7,7 @@ import CustomSlider from '../componant/CustomSlideBar';
 
 const Project_Identification: React.FC = () => {
     const [selected, setSelected] = useState<string | number>("");
-  const [formData, setFormData] = useState({
+  const [formData] = useState({
     row1Field1: '',
     row1Field2: '',
     row2Field1: '',

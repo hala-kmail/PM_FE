@@ -1,10 +1,7 @@
-import React from 'react';
 import { FaTimes } from 'react-icons/fa';
 import CircularProgress from './componant/circule progress';
 import useCircularFormsNavigation from '../../../../hook/CircularFormsNavigationLogic';
-import CircularForms from './componant/circule progress';
 import { theme } from '../../../../theme/color';
-import { BsBorderStyle } from 'react-icons/bs';
 
 type AddProjectProps = {
   isOpen: boolean;
@@ -15,7 +12,6 @@ const AddProject = ({ isOpen, onClose }: AddProjectProps) => {
   const {
     activeForm,
     goToNextForm,
-    goToPreviousForm,
     goToForm
   } = useCircularFormsNavigation();
 
