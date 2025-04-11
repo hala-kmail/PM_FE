@@ -1,16 +1,14 @@
 import React, { useState } from "react";
-import logo from "../../assets/logo.png"; // adjust if your logo path is different
+import logo from "../../assets/logo.png"; 
 import { useTranslation } from "react-i18next";
 
-// Inside the component
 const LoginPage: React.FC = () => {
-//   const [language, setLanguage] = useState<"AR" | "EN">("AR");
   const [showPassword, setShowPassword] = useState(false);
   const { t, i18n } = useTranslation();
 
-  const toggleLanguage = (lang: "AR" | "EN") => {
-    i18n.changeLanguage(lang); // 🔄 switches translation
-    document.documentElement.dir = lang === "EN" ? "ltr" : "rtl"; // ⬅️ RTL/LTR
+  const toggleLanguage = (lang: "EN" | "AR") => {
+    i18n.changeLanguage(lang); 
+    document.documentElement.dir = lang === "AR" ? "ltr" : "rtl"; 
   };
    
   
@@ -20,7 +18,6 @@ const LoginPage: React.FC = () => {
 
   return (
     <div className="flex h-screen font-poppins">
-      {/* Left Panel */}
       <div className="w-1/2 flex flex-col justify-center items-center bg-white px-12">
         <img src={logo} alt="logo" className="w-[179px] h-[58px] mb-4 mt-4" />
 
@@ -34,7 +31,6 @@ const LoginPage: React.FC = () => {
         {t("auth.selectLanguage")}        
         </p>
 
-        {/* Language Toggle */}
         <div className="flex bg-[#F1F1F1] rounded-[12px] h-[56px] w-full max-w-sm mb-6 overflow-hidden">
           {["EN", "AR"].map((lang) => (
             <button
@@ -48,8 +44,6 @@ const LoginPage: React.FC = () => {
             </button>
           ))}
         </div>
-
-        {/* Form */}
         <form className="w-full max-w-sm font-poppins">
           <label className="block mb-1 text-sm font-medium">{t("auth.username")}</label>
           <input
@@ -93,8 +87,6 @@ const LoginPage: React.FC = () => {
           </p>
         </form>
       </div>
-
-      {/* Right Panel */}
       <div className="w-1/2 h-full">
         <img
           src="src/assets/building.jpeg"

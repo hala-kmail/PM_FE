@@ -1,47 +1,42 @@
-import { MenuItem } from "./Types";
-import { getMenuAsText, MenuModel } from "./constants/sideBarData";
-import { useState } from "react";
-import Sidebar from "./components/common/navigation/sidebar";
-import TopNavbar from "./components/common/navigation/topNav";
-import Routers from "./routers";
-import { BrowserRouter, useLocation } from "react-router-dom";
+import Sidebar from './components/common/navigation/sidebar';
+import TopNavbar from './components/common/navigation/topNav';
+import Routers from './routers/route';
+import useNavigation from './hook/navigationLogic';
+import useMenu from './hook/MenuLogic';
+import  useSidebar from './hook/SidemenueLogic';// استخدام Hook الشريط الجانبي
+import useLanguage from './hook/laguageLogic'; // استخدام Hook اللغة
 
-// Create a wrapper to access useLocation
-function AppContent() {
-  const [activeMenu] = useState<'text' | 'model'>('text');
-  const [language, setLanguage] = useState<'ENGLISH' | 'ARABIC'>('ENGLISH');
-  const location = useLocation();
-
-  const toggleLanguage = () => {
-    setLanguage((prev) => (prev === 'ENGLISH' ? 'ARABIC' : 'ENGLISH'));
-  };
-
-  const getMenuItems = (): MenuItem[] => {
-    switch (activeMenu) {
-      case 'model':
-        return MenuModel.getInstance().getMenuItems();
-      case 'text':
-      default:
-        return getMenuAsText();
-    }
-  };
+function App() {
+  const { navigateTo } = useNavigation(); // Hook التنقل
+  const { getMenuItems } = useMenu(); // Hook القوائم
+  const { sidebarOpen, toggleSidebar } = useSidebar(); // Hook الشريط الجانبي
+  const { language, toggleLanguage } = useLanguage(); // Hook اللغة
 
   const handleItemClick = (path: string) => {
-    console.log('Navigating to:', path);
+    navigateTo(path); // استخدام التنقل
   };
 
   // Check if current route is login
-  const isLoginPage = location.pathname === "/";
+  const isLoginPage = location.pathname === "/login";
 
   return (
-    <div className="flex min-h-screen" style={{ backgroundColor: "#F9F9F9" }}>
-      {/* Only show Sidebar if not on login */}
+    <div className="flex min-h-screen bg-[#F9F9F9]">
       {!isLoginPage && (
-        <Sidebar menu={getMenuItems()} onItemClick={handleItemClick} />
+        <Sidebar
+          menu={getMenuItems()}
+          onItemClick={handleItemClick}
+          isOpen={sidebarOpen}
+          toggleSidebar={toggleSidebar}
+        />
       )}
-
-      <div className={`flex flex-col flex-1 ${!isLoginPage ? 'ml-64' : ''}`}>
-        {/* Only show TopNavbar if not on login */}
+  
+      <div
+        className={`
+          flex flex-col flex-1 transition-all duration-300
+          ${!isLoginPage && sidebarOpen ? 'ml-64' : 'ml-0'} 
+          ${!isLoginPage ? 'md:ml-64' : ''}
+        `}
+      >
         {!isLoginPage && (
           <TopNavbar
             userName="Mai Shalabi"
@@ -50,21 +45,15 @@ function AppContent() {
             onLanguageToggle={toggleLanguage}
           />
         )}
-
+  
         <main className="">
           <Routers />
         </main>
       </div>
     </div>
   );
-}
+}  
 
-function App() {
-  return (
-    <BrowserRouter>
-      <AppContent />
-    </BrowserRouter>
-  );
-}
+
 
 export default App;

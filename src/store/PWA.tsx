@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { BeforeInstallPromptEvent } from '../Types';
 
@@ -13,26 +12,24 @@ const useInstallPrompt = (menu: any[], onItemClick: (path: string) => void) => {
   }, [menu, onItemClick]);
 
   useEffect(() => {
-    console.log('beforeinstallprompt event fired');
-
-    const handler = (e: BeforeInstallPromptEvent) => {
-      e.preventDefault();
-      console.log('beforeinstallprompt event fired');
-      setDeferredPrompt(e);
+    const handler = (e: Event) => {
+      const event = e as BeforeInstallPromptEvent;
+      event.preventDefault();
+      setDeferredPrompt(event);
       setShowInstall(true);
     };
 
-    window.addEventListener('beforeinstallprompt', handler);
-
-    // Check if the app is already installed
-    window.addEventListener('appinstalled', () => {
+    const handleAppInstalled = () => {
       console.log('PWA was installed');
       setShowInstall(false);
-    });
+    };
+
+    window.addEventListener('beforeinstallprompt', handler);
+    window.addEventListener('appinstalled', handleAppInstalled);
 
     return () => {
       window.removeEventListener('beforeinstallprompt', handler);
-      window.removeEventListener('appinstalled', () => {});
+      window.removeEventListener('appinstalled', handleAppInstalled);
     };
   }, []);
 
@@ -48,11 +45,10 @@ const useInstallPrompt = (menu: any[], onItemClick: (path: string) => void) => {
 
     console.log('Showing install prompt');
     deferredPrompt.prompt();
-    
+
     const { outcome } = await deferredPrompt.userChoice;
     console.log(`User response: ${outcome}`);
-    
-    // We no longer need the prompt
+
     setDeferredPrompt(null);
     setShowInstall(false);
   };

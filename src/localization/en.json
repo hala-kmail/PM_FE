@@ -6,7 +6,8 @@
     "edit":"edit",
     "deactivate":"deactivate",
     "delete":"delete",
-    "add":"Add"
+    "add":"Add",
+    "language":"language:"
 },
 "auth": {
   "signIn": "تسجيل دخول",
@@ -19,73 +20,38 @@
   "instruction": "الرجاء إدخال بيانات الدخول",
   "selectLanguage": "اختر اللغة المفضلة"
 },
-  "dashboard": {
-    "greeting": "Hello, {{name}}! 👋"
+"home": {
+  "hello": "Hello,",
+  "language": "Language:",
+  "lastSignIn": "last sign in in",
+  "logout": "Logout",
+  "sidebar": {
+    "home": "Home",
+    "performance": "Performance Indicators",
+    "reports": "Reports",
+    "projects": "Projects",
+    "maps": "Maps",
+    "settings": "Settings"
   },
-    "validation": {
-      "usernameRequired": "Please enter your username",
-      "passwordRequired": "Please enter your password",
-      "userForm" : {
-        "fullNameRequired": "Please enter the full name!" , 
-        "usernameRequired": "Please enter the username!" ,
-        "emailRequired": "Please enter the email address!",
-        "phoneNumberRequired": "Please enter the mobile number!",
-        "addressRequired": "Please enter the address!",
-        "idNoRequired": "Please enter the Id card number!"
-      }
-    },
-  "sideBar":{
-      "profile": "My Profile",
-      "users":"Users",
-      "dashboard":"Dashboard",
-      "add":"Add New User",
-      "groups":"groups",
-      "GroupScheduale":"Group Scheduale"
-   },
-  "user": {
-      "idNo": "ID Number",
-      "username": "Username",
-      "email": "Email",
-      "fullName":"Full Name",
-      "first_name": "First Name",
-      "second_name": "Second Name",
-      "third_name": "Third Name",
-      "last_name": "Last Name",
-      "phoneNumber": "Phone Number",
-      "address": "Address",
-      "joinDate": "joinDate",
-      "updated_at": "Updated At",
-       "is_superuser":"Is Superuser?",
-      "is_active":"Is Active?",
-      "active":"active",
-      "not_active":"Not Active",
-      "superuser":"Super User",
-      "deactivate":"deactivate"
-    },
-    "dialog":{
-      "enure_deactivate":"Are you sure you want to deactivate this user?",
-      "confirm":"Confirm",
-      "cancel":"Cancel",
-      "add": "Add",
-      "addNewUser": "Add New User"
-    },
-    "fields":{
-      "id_no":"ID Number",
-      "email":"Email",
-      "username":"Username",
-      "first_name": "First Name",
-     "second_name": "Second Name",
-      "third_name": "Third Name",
-      "last_name": "Last Name",
-      "gender" : "Gender",
-      "password":"password",
-      "name":"name",
-      "address":"address",
-      "phone_number":"phone number",
-      "idno":"ID Number",
-      "role":"role",
-      "birth_date":"birth date",
-
-      "group_id":"group id"    
-    }
+  "cards": {
+    "totalEstimated": "Total Estimated Amount",
+    "totalPayment": "Total Payment",
+    "totalProjects": "Total Projects"
+  },
+  "charts": {
+    "taskByEntity": "Task By Entity",
+    "notDue": "Not Due",
+    "overDue": "Over Due",
+    "started": "Started",
+    "running": "Running",
+    "overallProgress": "Overall Progress",
+    "gap": "gap",
+    "actual": "actual",
+    "planned": "planned",
+    "projectDurations": "Projects Durations",
+    "weeks10_15": "10-15 Weeks",
+    "weeks3_8": "3-8 Weeks",
+    "weeks2": "2 weeks"
+  }
+}
 }

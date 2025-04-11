@@ -8,6 +8,8 @@ import {
   CogIcon,
 } from '@heroicons/react/outline';
 
+import i18n from 'i18next';
+
 // Menu item type
 export interface MenuItem {
   id: number;
@@ -18,12 +20,12 @@ export interface MenuItem {
 
 // Static menu items generator
 export const getMenuAsText = (): MenuItem[] => [
-  { id: 1, title: 'Home', icon: HomeIcon, path: '/dashboard' },
-  { id: 2, title: 'Performance Indicators', icon: ChartBarIcon, path: '/analytics' },
-  { id: 3, title: 'Reports', icon: ClipboardListIcon, path: '/profile' },
-  { id: 4, title: 'Projects', icon: TemplateIcon, path: '/projects' },
-  { id: 5, title: 'Maps', icon: LocationMarkerIcon, path: '/maps' },
-  { id: 6, title: 'Settings', icon: CogIcon, path: '/settings' },
+  { id: 1, title: i18n.t("home.sidebar.home"), icon: HomeIcon, path: '/' },
+  { id: 2, title: i18n.t("home.sidebar.performance"), icon: ChartBarIcon, path: '/analytics' },
+  { id: 3, title: i18n.t("home.sidebar.reports"), icon: ClipboardListIcon, path: '/Reports' },
+  { id: 4, title: i18n.t("home.sidebar.projects"), icon: TemplateIcon, path: '/projects' },
+  { id: 5, title: i18n.t("home.sidebar.maps"), icon: LocationMarkerIcon, path: '/maps' },
+  { id: 6, title: i18n.t("home.sidebar.settings"), icon: CogIcon, path: '/settings' },
 ];
 
 // Menu model singleton class
