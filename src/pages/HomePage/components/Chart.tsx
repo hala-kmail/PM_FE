@@ -8,7 +8,6 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-// البيانات
 const data = [
   { name: "Page A", read1: 1200, read2: 1500, read3: 2000, read4: 2500 },
   { name: "Page B", read1: 1000, read2: 1200, read3: 1500, read4: 2000 },
@@ -17,81 +16,56 @@ const data = [
   { name: "Page E", read1: 700, read2: 800, read3: 900, read4: 1000 },
   { name: "Page F", read1: 1300, read2: 1400, read3: 1500, read4: 1600 },
   { name: "Page G", read1: 800, read2: 1000, read3: 1200, read4: 1400 },
-  { name: "Page G", read1: 800, read2: 1000, read3: 1200, read4: 1400 },
+  { name: "Page H", read1: 900, read2: 1100, read3: 1300, read4: 1500 },
 ];
 
-// المكون
 const Chart = () => {
   return (
-    <div className="w-full h-auto flex flex-col items-center mt-9 px-4">
+    <div className="w-full flex flex-col items-start mt-9 px-4 overflow-x-auto">
       {/* البادجات التعريفية */}
-    
-      <div className="flex gap-2 m-7">
-      <span className="mr-8 font-[Poppins] font-extrabold text-[16px] leading-[100%] tracking-[0%] text-[#4D4D4D]">
-  Task By Intitiy
-</span>
+      <div className="flex flex-wrap items-center gap-4 mb-6">
+        <span className="text-lg font-bold text-[#4D4D4D]">Task By Entity</span>
 
-        <div className="flex flex-row gap-4">
-       
-        <span className="px-3  rounded-sm text-[#023047] text-sm gap-4">
-        <span className="px-3  rounded-sm text-white text-sm mr-2" style={{ backgroundColor: "#023047" }}>
-          
-          </span>
-        Not Due
-        </span>
+        <div className="flex items-center gap-2">
+          <span className="w-4 h-4 rounded-sm" style={{ backgroundColor: "#023047" }}></span>
+          <span className="text-sm text-[#023047]">Not Due</span>
         </div>
-        <div className="flex flex-row gap-4">
-       
-       <span className="px-3  rounded-sm text-[#C89E4F] text-sm gap-4">
-       <span className="px-3  rounded-sm text-white text-sm mr-2" style={{ backgroundColor: "#C89E4F" }}>
-         
-         </span>
-         Over Due
-       </span>
-       </div>
-       <div className="flex flex-row gap-4">
-       
-       <span className="px-3  rounded-sm text-[#4D4D4D] text-sm gap-4">
-       <span className="px-3  rounded-sm text-white text-sm mr-2" style={{ backgroundColor: "#4D4D4D" }}>
-         
-         </span>
-         Started
-       </span>
-       </div>
-       <div className="flex flex-row gap-4">
-       
-       <span className="px-3  rounded-sm text-[#707070] text-sm gap-4">
-       <span className="px-3  rounded-sm text-white text-sm mr-2" style={{ backgroundColor: "#707070" }}>
-         
-         </span>
-         Running
-       </span>
-       </div>
+
+        <div className="flex items-center gap-2">
+          <span className="w-4 h-4 rounded-sm" style={{ backgroundColor: "#C89E4F" }}></span>
+          <span className="text-sm text-[#C89E4F]">Over Due</span>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <span className="w-4 h-4 rounded-sm" style={{ backgroundColor: "#4D4D4D" }}></span>
+          <span className="text-sm text-[#4D4D4D]">Started</span>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <span className="w-4 h-4 rounded-sm" style={{ backgroundColor: "#707070" }}></span>
+          <span className="text-sm text-[#707070]">Running</span>
+        </div>
       </div>
 
-      {/* المخطط العمودي */}
-      <ResponsiveContainer width="100%" height={420}>
-  <BarChart
-    data={data}
-    margin={{
-      top: 20,
-      right: 30,
-      left: 10,
-      bottom: 10,
-    }}
-  >
-    <CartesianGrid vertical={false} stroke="#ccc" />
-    <XAxis dataKey="name" />
-    <YAxis />
-    <Tooltip />
+      {/* المخطط */}
+      <div className="w-full" style={{ minWidth: "600px" }}>
+        <ResponsiveContainer width="100%" height={420}>
+          <BarChart
+            data={data}
+            margin={{ top: 20, right: 30, left: 10, bottom: 10 }}
+          >
+            <CartesianGrid vertical={false} stroke="#ccc" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
 
-    <Bar dataKey="read1" fill="#023047" radius={[12, 12, 0, 0]} />
-    <Bar dataKey="read2" fill="#C89E4F" radius={[12, 12, 0, 0]} />
-    <Bar dataKey="read3" fill="#4D4D4D" radius={[12, 12, 0, 0]} />
-    <Bar dataKey="read4" fill="#707070" radius={[12, 12, 0, 0]} />
-  </BarChart>
-</ResponsiveContainer>
-
+            <Bar dataKey="read1" fill="#023047" radius={[12, 12, 0, 0]} />
+            <Bar dataKey="read2" fill="#C89E4F" radius={[12, 12, 0, 0]} />
+            <Bar dataKey="read3" fill="#4D4D4D" radius={[12, 12, 0, 0]} />
+            <Bar dataKey="read4" fill="#707070" radius={[12, 12, 0, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   );
 };
