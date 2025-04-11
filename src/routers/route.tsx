@@ -7,9 +7,9 @@ import ProjectDetails from "../pages/Project details/Project Details";
 const Routers = () => {
   return (
     <Routes>
-      <Route path="/" element={<LoginPage />} />
+      <Route path="/login" element={<LoginPage />} />
       <Route path="/Projects" element={<ProjectsPage />} />
-      <Route path="/home" element={<Homepage />} />
+      <Route path="/" element={<Homepage />} />
       <Route path="/projects/:projectName" element={<ProjectDetails />} />
     </Routes>
   );
