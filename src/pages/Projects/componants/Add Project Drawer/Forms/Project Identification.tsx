@@ -44,6 +44,7 @@ const Project_Identification: React.FC = () => {
 
 <CustomInput value={''} onChange={function (value: string): void {
                       throw new Error('Function not implemented.');
+                      console.log(value);
                   } }/>
         </div>
         <div className="flex flex-col">
@@ -55,6 +56,8 @@ const Project_Identification: React.FC = () => {
           
 <CustomInput value={''} onChange={function (value: string): void {
                       throw new Error('Function not implemented.');
+                      console.log(value);
+
                   } }/>
         </div>
       </div>
@@ -67,6 +70,7 @@ const Project_Identification: React.FC = () => {
 </div>
 <CustomInput value={''} onChange={function (value: string): void {
                       throw new Error('Function not implemented.');
+                      console.log(value);
                   } }/>
         </div>
         <div className="flex flex-col">
@@ -76,6 +80,7 @@ const Project_Identification: React.FC = () => {
 </div>
 <CustomInput value={''} onChange={function (value: string): void {
                       throw new Error('Function not implemented.');
+                      console.log(value);
                   } }/>
         </div>
       </div>
@@ -100,6 +105,7 @@ const Project_Identification: React.FC = () => {
           <label className="text-gray-700 text-sm font-semibold mb-2">Project Number MOF</label>
           <CustomInput value={''} onChange={function (value: string): void {
                       throw new Error('Function not implemented.');
+                      console.log(value);
                   } }/>
         </div>
         

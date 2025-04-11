@@ -39,6 +39,7 @@ const Strategic_Alignment: React.FC = () => {
 
 <CustomTextarea value={''} onChange={function (e: React.ChangeEvent<HTMLTextAreaElement>): void {
                       throw new Error('Function not implemented.');
+                      console.log(e);
                   } }/>
         </div>
         <div className="flex flex-col">
