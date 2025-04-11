@@ -16,6 +16,9 @@ function App() {
     navigateTo(path); // استخدام التنقل
   };
 
+  // Check if current route is login
+  const isLoginPage = location.pathname === "/";
+
   return (
     <div className="flex min-h-screen bg-[#F9F9F9]">
       {/* Sidebar */}
@@ -45,6 +48,14 @@ function App() {
         </main>
       </div>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
   );
 }
 

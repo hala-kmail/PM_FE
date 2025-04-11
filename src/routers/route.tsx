@@ -1,13 +1,14 @@
 import { Routes, Route } from "react-router-dom";
 import Homepage from "../pages/HomePage/homepage";
 import ProjectsPage from "../pages/Projects/projects";
+import LoginPage from "../pages/LoginPage/LoginPage";
 
 const Routers = () => {
   return (
     <Routes>
-      {/* Public Routes */}
-      <Route path="/" element={<Homepage />} />
-      <Route path="/projects" element={<ProjectsPage />} />
+      <Route path="/" element={<LoginPage />} />
+      <Route path="/Projects" element={<ProjectsPage />} />
+      <Route path="/home" element={<Homepage />} />
     </Routes>
   );
 };
