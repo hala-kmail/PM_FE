@@ -8,14 +8,16 @@
     "delete":"حذف",
     "add":"إضافة"
   },
-  "auth":{
-    "since_2024":"منذ 2024",
-    "login":"تسجيل دخول",
-    "signUp":"إنشاء حساب",
-    "username": "رقم الهوية",
-    "password":  "كلمة المرور",
-    "rememberMe":"تذكرني ",
-    "invalidCredentials":"رقم الهوية أو كلمة المرور غير صحيحة"
+  "auth": {
+    "signIn": "Sign In",
+    "username": "User Name",
+    "password": "Password",
+    "usernamePlaceholder": "Enter User Name",
+    "passwordPlaceholder": "Password",
+    "changePassword": "Change Your Password",
+    "welcome": "Welcome Back",
+    "instruction": "Welcome Back, Please Add Your Credentials",
+    "selectLanguage": "Select Your Preference Language"
   },
   "dashboard": {
     "greeting": "مرحباً بعودتك {{name}} 👋 "
