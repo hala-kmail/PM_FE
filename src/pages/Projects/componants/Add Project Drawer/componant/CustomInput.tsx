@@ -9,7 +9,7 @@ type Props = {
   icon?: React.ReactNode;
 };
 
-const CustomInput: React.FC<Props> = ({ value, onChange, placeholder, icon }) => {
+const CustomInput: React.FC<Props> = ({ value, onChange, placeholder }) => {
   return (
       <input
         value={value}
