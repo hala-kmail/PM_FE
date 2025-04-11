@@ -17,7 +17,7 @@ function App() {
   };
 
   // Check if current route is login
-  const isLoginPage = location.pathname === "/";
+  const isLoginPage = location.pathname === "/login";
 
   return (
     <div className="flex min-h-screen bg-[#F9F9F9]">

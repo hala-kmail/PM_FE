@@ -1,5 +1,7 @@
 
-
+import bulk from 'src/assets/bulkofmoney.png';
+import salary from 'src/assets/salary.png';
+import bag from "src/assets/bag.png" ;
 const Card = () => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
@@ -9,7 +11,7 @@ const Card = () => {
      
       
             <img
-              src="src/assets/bulkofmoney.png"  // Removed "public" from path
+              src={bulk}  // Removed "public" from path
               alt="Logo"
               className="h-20 w-20 rounded-sm border-2 border-[#707070]" // Added white border
             />
@@ -30,7 +32,7 @@ const Card = () => {
      
       
             <img
-              src="src/assets/salary.png"  // Removed "public" from path
+              src={salary}  // Removed "public" from path
               alt="Logo"
               className="h-20 w-20 rounded-sm border-2 border-[#707070]" // Added white border
             />
@@ -51,7 +53,7 @@ const Card = () => {
      
       
             <img
-              src="src/assets/bag.png"  // Removed "public" from path
+              src={bag}// Removed "public" from path
               alt="Logo"
               className="h-20 w-20 rounded-sm border-2 border-[#707070]" // Added white border
             />

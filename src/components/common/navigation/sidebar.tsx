@@ -2,7 +2,7 @@ import React from 'react';
 import { ChevronRightIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
 import { SidebarProps } from '../../../Types';
 import useActivePath from '../../../hook/ActivePathLogic';
-
+import logo from 'src/assets/logo.png';
 const Sidebar: React.FC<SidebarProps> = ({ menu, onItemClick, isOpen, toggleSidebar }) => {
   const { activePath, setActivePath } = useActivePath(); // استخدام الهوك
 
@@ -45,8 +45,9 @@ const Sidebar: React.FC<SidebarProps> = ({ menu, onItemClick, isOpen, toggleSide
         {/* الشعار */}
         <div>
           <div className="mb-1 text-center">
+          
             <img
-              src="src/assets/logo.png"
+              src={logo}
               alt="Logo"
               className="mx-auto h-30 w-full p-6"
             />

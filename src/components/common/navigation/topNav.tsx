@@ -3,7 +3,7 @@ import { ArrowCircleDownIcon, ArrowCircleUpIcon } from '@heroicons/react/outline
 import DropdownMenu from './dropDown';
 import { TopNavbarProps } from '../../../Types';
 import { useTopNavbar } from '../../../hook/TopNavlogic';
-
+import user from 'src/assets/user.jpg';
 const TopNavbar: React.FC<TopNavbarProps> = ({
   userName,
   userPosition,
@@ -34,7 +34,7 @@ const TopNavbar: React.FC<TopNavbarProps> = ({
           className="flex items-center gap-2 text-gray-700 focus:outline-none hover:bg-gray-200 hover:text-[#023047] transition-all duration-200 px-2 py-1 rounded-md"
         >
           <img
-            src="src/assets/user.jpg"
+            src={user}
             alt="User"
             className="h-9 w-9 sm:h-10 sm:w-10 rounded-full"
           />
