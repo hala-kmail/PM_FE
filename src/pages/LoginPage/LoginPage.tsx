@@ -14,7 +14,7 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen overflow-hidden">
       <div className="w-1/2 flex flex-col justify-center items-center bg-white px-12">
         <img
             src={logo}

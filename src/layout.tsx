@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
-const [canInstall, setCanInstall] = useState(false);
+const [, setDeferredPrompt] = useState<any>(null);
+const [, setCanInstall] = useState(false);
 
 useEffect(() => {
   const handler = (e: any) => {
@@ -14,12 +14,12 @@ useEffect(() => {
   return () => window.removeEventListener('beforeinstallprompt', handler);
 }, []);
 
-const handleInstallClick = async () => {
-  if (deferredPrompt) {
-    deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
-    console.log(`Install outcome: ${outcome}`);
-    setDeferredPrompt(null);
-    setCanInstall(false);
-  }
-};
+// const handleInstallClick = async () => {
+//   if (deferredPrompt) {
+//     deferredPrompt.prompt();
+//     const { outcome } = await deferredPrompt.userChoice;
+//     console.log(`Install outcome: ${outcome}`);
+//     setDeferredPrompt(null);
+//     setCanInstall(false);
+//   }
+// };

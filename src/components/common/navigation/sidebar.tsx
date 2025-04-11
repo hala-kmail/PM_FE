@@ -48,7 +48,7 @@ const Sidebar: React.FC<SidebarProps> = ({ menu, onItemClick, isOpen, toggleSide
             <img
               src="src/assets/logo.png"
               alt="Logo"
-              className="mx-auto h-30 w-full"
+              className="mx-auto h-30 w-full p-6"
             />
           </div>
 

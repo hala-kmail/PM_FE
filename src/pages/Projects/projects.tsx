@@ -5,6 +5,8 @@ import { FaSearch, FaPlus, FaFilter } from "react-icons/fa";
 import { theme } from "../../theme/color";
 import { PROJECTS } from "../../Data/Projects";
 import AddProject from "./componants/Add Project Drawer/Add Project Drawer";
+import PageHeader from "../../hook/PageHeader";
+
 const ProjectsPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -17,7 +19,7 @@ const ProjectsPage: React.FC = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-6 pr-6 pl-6 relative">
+    <div className="min-h-screen bg-gray-50 p-6 pl-6 relative">
       {isFilterOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-30 z-40"
@@ -30,8 +32,7 @@ const ProjectsPage: React.FC = () => {
 
       <div className="flex flex-col gap-4 mb-6">
         <div className="flex flex-col lg:flex-row justify-between items-center gap-4 pb-10">
-          <h1 className="text-xl font-bold text-gray-800">Projects</h1>
-
+    <PageHeader/>
           <div className="flex flex-col gap-2 w-full justify-end sm:flex-col lg:flex-row">
             <button
               onClick={() => setIsFilterOpen(true)}

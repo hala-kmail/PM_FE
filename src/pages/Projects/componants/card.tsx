@@ -3,6 +3,7 @@ import { FaUser } from 'react-icons/fa';
 import { AiFillWarning } from 'react-icons/ai';
 import { BsThreeDots } from "react-icons/bs";
 import { ProjectCardProps } from '../../../Types';
+import { useNavigate } from 'react-router-dom';
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   directorate,
@@ -18,7 +19,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     "Medium Risk": "bg-yellow-100 text-yellow-700",
     "High Risk": "bg-red-100 text-red-700",
   };
-
+ 
+    const navigate = useNavigate();
+  
+    const handleClick = () => {
+      const encodedTitle = encodeURIComponent(title); // عشان ما يصير مشاكل في الرابط
+      navigate(`/projects/${encodedTitle}`);
+    };
   const riskClass = riskColors[riskLevel] || "bg-gray-100 text-gray-700";
 
   // تحديد لون progress حسب النسبة
@@ -30,7 +37,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   }
 
   return (
-    <div className="max-w-sm rounded-2xl shadow-md overflow-hidden">
+    <div onClick={handleClick} className="max-w-sm rounded-2xl shadow-md overflow-hidden">
       {/* First Half - White Background */}
       <div className="bg-white p-5 space-y-4 flex flex-col">
         <div className="flex justify-between items-start">
