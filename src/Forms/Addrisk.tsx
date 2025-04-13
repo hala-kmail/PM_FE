@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 import { ChevronDown } from "lucide-react";
-import ReferenceDateUsingValue from '../../pages/Projects/componants/Add Project Drawer/componant/customcalender';
-import CustomTextarea from '../../pages/Projects/componants/Add Project Drawer/componant/CustomTextArea';
-import CustomSelect from '../../pages/Projects/componants/Add Project Drawer/componant/CustomselectList';
-import { Option } from '../../Types';
+import ReferenceDateUsingValue from '../pages/Projects/componants/Add Project Drawer/componant/customcalender';
+import CustomTextarea from '../pages/Projects/componants/Add Project Drawer/componant/CustomTextArea';
+import CustomSelect from '../pages/Projects/componants/Add Project Drawer/componant/CustomselectList';
+import { Option } from '../Types';
 
 type Props = {
   mode: "create" | "view" | "edit";
