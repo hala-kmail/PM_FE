@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { MenuItem } from '../Types';
-import { MenuModel, getMenuAsText } from '../constants/sideBarData';
+import { MenuModel } from './side menu';
+import { getMenuAsText } from '../Data/side menu Nav';
 
 const useMenu = () => {
   const [activeMenu] = useState<'text' | 'model'>('text');

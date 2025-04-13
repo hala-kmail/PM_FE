@@ -49,10 +49,10 @@ const CircularForms: React.FC<CircularFormsProps> = ({ activeForm, goToForm }) =
 
       {/* المحتوى المتغير حسب الفورم */}
       <div className="mt-6 w-full">
-        {activeForm === 1 && <Project_Identification />}
-        {activeForm === 2 && <Strategic_Alignment />}
-        {activeForm === 3 && <Ownership_Responsibility />}
-        {activeForm === 4 && <Other_Details />}
+        {activeForm === 1 && <Project_Identification mode={'create'} />}
+        {activeForm === 2 && <Strategic_Alignment mode={'create'} />}
+        {activeForm === 3 && <Ownership_Responsibility mode={'create'} />}
+        {activeForm === 4 && <Other_Details mode={'create'} />}
       </div>
     </div>
   );

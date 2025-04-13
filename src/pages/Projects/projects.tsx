@@ -5,7 +5,8 @@ import { FaSearch, FaPlus, FaFilter } from "react-icons/fa";
 import { theme } from "../../theme/color";
 import { PROJECTS } from "../../Data/Projects";
 import AddProject from "./componants/Add Project Drawer/Add Project Drawer";
-import PageHeader from "../../hook/PageHeader";
+import  { getTitle } from "../../hook/PageHeader";
+import { Link } from "react-router-dom";
 
 const ProjectsPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
@@ -32,7 +33,12 @@ const ProjectsPage: React.FC = () => {
 
       <div className="flex flex-col gap-4 mb-6">
         <div className="flex flex-col lg:flex-row justify-between items-center gap-4 pb-10">
-    <PageHeader/>
+        <h1 className="text-xl font-bold text-gray-800">
+         <Link to={`/projects`}>
+        {getTitle()}
+  </Link>
+
+    </h1>
           <div className="flex flex-col gap-2 w-full justify-end sm:flex-col lg:flex-row">
             <button
               onClick={() => setIsFilterOpen(true)}
@@ -76,6 +82,7 @@ const ProjectsPage: React.FC = () => {
               projectManager={PROJECT.projectManager}
               riskLevel={PROJECT.riskLevel}
               progress={PROJECT.progress}
+              stage={PROJECT.stage}
             />
           ))}
         </div>

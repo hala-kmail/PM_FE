@@ -1,30 +1,16 @@
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
-const PageHeader = () => {
+export const getTitle = () => {
   const location = useLocation();
   const currentPath = location.pathname;
 
-  const getTitle = () => {
-    switch (currentPath) {
-      case '/projects':
-        return 'Projects';
-      case '/dashboard':
-        return 'Dashboard';
-      case '/settings':
-        return 'Settings';
-      default:
-        return 'Welcome';
-    }
-  };
-
-  return (
-    <h1 className="text-xl font-bold text-gray-800">
-         <Link to={`/home`}>
-        {getTitle()}
-  </Link>
-
-    </h1>
-  );
+  if (currentPath.includes('/projects')) {
+    return 'Projects';
+  } else if (currentPath.includes('/dashboard')) {
+    return 'Dashboard';
+  } else if (currentPath.includes('/settings')) {
+    return 'Settings';
+  } else {
+    return 'Home';
+  }
 };
-
-export default PageHeader;
