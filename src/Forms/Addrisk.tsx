@@ -12,7 +12,7 @@ type Props = {
 };
 
 const Add_Risk: React.FC<Props> = ({ mode, RiskData }) => {
-  const [selected, setSelected] = useState<string | number>(RiskData?.Goal || "");
+  const [, setSelected] = useState<string | number>(RiskData?.Goal || "");
 
   const [formData, setFormData] = useState({
    

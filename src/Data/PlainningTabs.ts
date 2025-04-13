@@ -1,6 +1,5 @@
-import CustomizedTables from "../pages/Project details/componant/phasestable";
 import ProjectDetailsForm from "../pages/Project details/sammaryTab";
-import { TabOne, TabThree, TabTwo } from "../pages/Project details/componant/tabs";
+import {  TabThree } from "../pages/Project details/componant/tabs";
 import PhaseTab from "../pages/Project details/PhaseTab";
 
  export const Plainingtabs = [
