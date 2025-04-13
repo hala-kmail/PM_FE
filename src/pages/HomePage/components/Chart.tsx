@@ -7,6 +7,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import { useTranslation } from "react-i18next";
 
 const data = [
   { name: "Page A", read1: 1200, read2: 1500, read3: 2000, read4: 2500 },
@@ -20,30 +21,32 @@ const data = [
 ];
 
 const Chart = () => {
+  const { t, i18n } = useTranslation();
+
   return (
     <div className="w-full flex flex-col items-start mt-9 px-4 overflow-x-auto">
       {/* البادجات التعريفية */}
       <div className="flex flex-wrap items-center gap-4 mb-6">
-        <span className="text-lg font-bold text-[#4D4D4D]">Task By Entity</span>
+        <span className="text-lg font-bold text-[#4D4D4D]">{t("home.charts.taskByEntity")}</span>
 
         <div className="flex items-center gap-2">
           <span className="w-4 h-4 rounded-sm" style={{ backgroundColor: "#023047" }}></span>
-          <span className="text-sm text-[#023047]">Not Due</span>
+          <span className="text-sm text-[#023047]">{t("home.charts.notDue")}</span>
         </div>
 
         <div className="flex items-center gap-2">
           <span className="w-4 h-4 rounded-sm" style={{ backgroundColor: "#C89E4F" }}></span>
-          <span className="text-sm text-[#C89E4F]">Over Due</span>
+          <span className="text-sm text-[#C89E4F]">{t("home.charts.overDue")}</span>
         </div>
 
         <div className="flex items-center gap-2">
           <span className="w-4 h-4 rounded-sm" style={{ backgroundColor: "#4D4D4D" }}></span>
-          <span className="text-sm text-[#4D4D4D]">Started</span>
+          <span className="text-sm text-[#4D4D4D]">{t("home.charts.started")}</span>
         </div>
 
         <div className="flex items-center gap-2">
           <span className="w-4 h-4 rounded-sm" style={{ backgroundColor: "#707070" }}></span>
-          <span className="text-sm text-[#707070]">Running</span>
+          <span className="text-sm text-[#707070]">{t("home.charts.running")}</span>
         </div>
       </div>
 

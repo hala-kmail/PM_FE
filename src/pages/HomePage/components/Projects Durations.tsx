@@ -8,6 +8,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { theme } from "../../../theme/color";
+import { useTranslation } from "react-i18next";
 
 interface ChartData {
   name: string;
@@ -29,13 +30,15 @@ const getPercentage = (data: ChartData[], index: number) => {
 };
 
 const Projects_Durations_chart: React.FC = () => {
+  const { t, i18n } = useTranslation();
+
   return (
     <div className="flex flex-col lg:flex-row justify-between items-center w-full h-full gap-6 p-4">
       {/* Text Section */}
       <div className="w-full lg:w-2/3 flex flex-col gap-3">
         <div className="flex flex-col gap-2">
           <span className="rounded-sm text-black text-sm font-bold">
-            Projects Durations
+          {t("home.charts.projectDurations")}
           </span>
         </div>
 

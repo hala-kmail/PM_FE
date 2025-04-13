@@ -4,9 +4,11 @@ import { SidebarProps } from '../../../Types';
 import useActivePath from '../../../hook/ActivePathLogic';
 import logo from '../../../assets/logo.png';
 
+import { useTranslation } from "react-i18next";
 
 const Sidebar: React.FC<SidebarProps> = ({ menu, onItemClick, isOpen, toggleSidebar }) => {
   const { activePath, setActivePath } = useActivePath(); // استخدام الهوك
+  const { t, i18n } = useTranslation();
 
   const handleItemClick = (path: string) => {
     setActivePath(path);
@@ -95,7 +97,7 @@ const Sidebar: React.FC<SidebarProps> = ({ menu, onItemClick, isOpen, toggleSide
                 d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75"
               />
             </svg>
-            <span className="text-sm font-medium">Logout</span>
+            <span className="text-sm font-medium"> {t("home.logout")}</span>
           </div>
         </div>
       </aside>

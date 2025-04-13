@@ -4,6 +4,7 @@ import DropdownMenu from './dropDown';
 import { TopNavbarProps } from '../../../Types';
 import { useTopNavbar } from '../../../hook/TopNavlogic';
 import user from '../../../assets/user.jpg';
+import { useTranslation } from "react-i18next";
 
 const TopNavbar: React.FC<TopNavbarProps> = ({
   userName,
@@ -12,15 +13,16 @@ const TopNavbar: React.FC<TopNavbarProps> = ({
   onLanguageToggle,
 }) => {
   const { menuOpen, toggleMenu, showInstall, handleInstallClick } = useTopNavbar([], () => {}, language, onLanguageToggle);
+  const { t, i18n } = useTranslation();
 
   return (
     <header className="w-full h-auto bg-white px-4 md:px-6 py-4 flex flex-wrap items-center justify-between gap-4 relative z-10">
-      <div className="text-lg font-bold hidden sm:block">Hello,</div>
+      <div className="text-lg font-bold hidden sm:block"> {t("home.hello")}</div>
 
       <div className="flex items-center gap-4 sm:gap-6 ml-auto flex-wrap">
         {/* اللغة */}
         <div className="flex items-center gap-2">
-          <span className="font-semibold hidden sm:block">Language:</span>
+          <span className="font-semibold hidden sm:block"> {t("general.language")}</span>
           <span className="bg-[#F1F1F1] flex items-center gap-2 rounded-md text-sm px-2 sm:px-3 py-1">
             {language}
             <button

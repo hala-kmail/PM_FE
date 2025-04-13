@@ -1,5 +1,6 @@
 
 import React from "react";
+import { useTranslation } from "react-i18next";
 import {
   PieChart,
   Pie,
@@ -32,6 +33,7 @@ const getPercentage = (data: ChartData[], index: number) => {
 const Overall_progress_chart: React.FC = () => {
   const innerPercentage = getPercentage(innerData, 0);
   const outerPercentage = getPercentage(outerData, 0);
+  const { t, i18n } = useTranslation();
 
   return (
     <div className="flex flex-col lg:flex-row justify-between items-center w-full h-full gap-6 p-4">
@@ -39,7 +41,7 @@ const Overall_progress_chart: React.FC = () => {
       <div className="w-full lg:w-2/3 flex flex-col gap-3">
         <div className="flex flex-col gap-2">
           <span className="rounded-sm text-black text-sm font-bold">
-            Overall Progress
+          {t("home.charts.overallProgress")}
           </span>
           <span className="ml-4 text-black text-sm font-bold">
             {`gap: ${Math.abs(parseFloat(outerPercentage) - parseFloat(innerPercentage))}%`}
@@ -49,11 +51,11 @@ const Overall_progress_chart: React.FC = () => {
         <div className="flex flex-col gap-2 mt-2">
           <div className="flex flex-row gap-4 items-center">
             <span className="w-4 h-4 rounded-sm" style={{ backgroundColor: theme.primary }} />
-            <span className="text-[#023047] text-sm">actual</span>
+            <span className="text-[#023047] text-sm">{t("home.charts.actual")}</span>
           </div>
           <div className="flex flex-row gap-4 items-center">
             <span className="w-4 h-4 rounded-sm" style={{ backgroundColor: theme.secondary }} />
-            <span className="text-[#023047] text-sm">planned</span>
+            <span className="text-[#023047] text-sm">{t("home.charts.planned")}</span>
           </div>
         </div>
       </div>
