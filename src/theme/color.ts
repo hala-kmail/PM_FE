@@ -1,8 +1,6 @@
 // theme.ts
 
 import { styled, TableCell, tableCellClasses, TableRow } from "@mui/material";
-import { PhaseType } from "../Types";
-import Chip from '@mui/material/Chip';
 
 export const theme = {
   primary: '#023047', // Dark blue

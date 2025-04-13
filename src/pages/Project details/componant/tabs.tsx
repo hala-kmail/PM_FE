@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import { FC,  } from "react";
 import { theme } from "../../../theme/color";
 
 // 👇 Components for each tab

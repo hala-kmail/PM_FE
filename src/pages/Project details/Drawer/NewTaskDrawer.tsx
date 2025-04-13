@@ -1,13 +1,12 @@
 import React from "react";
-import { FaTimes, FaPlus } from "react-icons/fa";
+import { FaTimes  } from "react-icons/fa";
 // Import filter data and custom hook
-import { filterCategories } from "../../../Data/FiltesCategories";
 import { useFilterLogic } from "../../../hook/Add filter";
 import { FilterDrawerProps } from "../../../Types";
-import { theme } from "../../../theme/color";
+import AddTaskForm from "../../../Forms/AddTaskForm";
 
 const AddTaskDrawer: React.FC<FilterDrawerProps> = ({ isOpen, onClose }) => {
-  const { selectedFilters, toggleFilter } = useFilterLogic();
+  const { selectedFilters,  } = useFilterLogic();
 
   return (
     <div
@@ -32,7 +31,7 @@ const AddTaskDrawer: React.FC<FilterDrawerProps> = ({ isOpen, onClose }) => {
       </div>
 
       <div className="flex flex-col gap-5 p-4 overflow-y-auto max-h-[100vh]">
-       
+       <AddTaskForm mode={"create"}/>
       
       </div>
       {/* <button

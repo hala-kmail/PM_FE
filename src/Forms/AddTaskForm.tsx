@@ -6,7 +6,7 @@ import CustomSlider from "../pages/Projects/componants/Add Project Drawer/compon
 import { Option } from "../Types";
 import { ProjectIdentificationProps, useProjectIdentification } from "../hook/Project IdentificationLogic";
 
-const Project_Identification: React.FC<ProjectIdentificationProps> = (props) => {
+const AddTaskForm: React.FC<ProjectIdentificationProps> = (props) => {
   const {
   formData,
   showInput,
@@ -168,4 +168,4 @@ const Project_Identification: React.FC<ProjectIdentificationProps> = (props) => 
   );
 };
 
-export default Project_Identification;
+export default AddTaskForm;
