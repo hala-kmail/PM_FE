@@ -85,3 +85,13 @@ export type Option = {
   label: string;
   value: string | number;
 };
+export type PhaseType = {
+  Phase: string;
+  Task_Description: string;
+  Start_date: string;
+  End_date: string;
+  Weight: string;
+  duration: string;
+  Percentage: string;
+  Status: 'Completed' | 'Overdue' | 'Pending';
+};

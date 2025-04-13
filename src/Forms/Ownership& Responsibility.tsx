@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import CustomSelect from '../componant/CustomselectList';
-import { Option } from '../../../../../Types';
+import CustomSelect from '../pages/Projects/componants/Add Project Drawer/componant/CustomselectList';
+import { Option } from '../Types';
 import { ChevronDown } from "lucide-react";
-import CustomTextarea from '../componant/CustomTextArea';
+import CustomTextarea from '../pages/Projects/componants/Add Project Drawer/componant/CustomTextArea';
 
 type Props = {
   mode: "create" | "view" | "edit";
@@ -151,13 +151,7 @@ const Ownership_Responsibility: React.FC<Props> = ({ mode, projectData }) => {
         </div>
       </div>
 
-      <div className="flex justify-end mt-4">
-        {mode !== "view" && (
-          <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-lg">
-            {mode === "create" ? "Create" : "Save"}
-          </button>
-        )}
-      </div>
+   
     </form>
   );
 };

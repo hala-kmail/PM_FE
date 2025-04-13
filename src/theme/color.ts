@@ -1,5 +1,9 @@
 // theme.ts
 
+import { styled, TableCell, tableCellClasses, TableRow } from "@mui/material";
+import { PhaseType } from "../Types";
+import Chip from '@mui/material/Chip';
+
 export const theme = {
   primary: '#023047', // Dark blue
   secondary: '#C89E4F', // Golden color
@@ -30,3 +34,31 @@ export const StageColors: { [key: string]: string } = {
   "excution": "bg-green-100 text-green-700",
   "closer": "bg-gray-100 text-gray-700",
 };
+
+export const StyledTableCell = styled(TableCell)(({ theme }) => ({
+  [`&.${tableCellClasses.head}`]: {
+    backgroundColor: '#F1F1F1', // أزرق غامق (Tailwind: blue-900)
+    color: '#000000',           // أبيض
+    fontWeight: 'bold',
+  },
+  [`&.${tableCellClasses.body}`]: {
+    fontSize: 14,
+    color: '#1F2937', // رمادي داكن (Tailwind: gray-800)
+  },
+}));
+
+// تعديل ألوان صفوف الجدول
+export const StyledTableRow = styled(TableRow)(({ theme }) => ({
+  '&:nth-of-type(odd)': {
+    backgroundColor: '#FFFFFF', // رمادي فاتح (Tailwind: gray-100)
+  },
+  '&:nth-of-type(even)': {
+    backgroundColor: '#FFFFFF', // أبيض للصفوف الزوجية
+  },
+  '&:last-child td, &:last-child th': {
+    border: 0,
+  },
+}));
+
+
+// Helper to get chip color

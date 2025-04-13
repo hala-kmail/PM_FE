@@ -1,4 +1,5 @@
 import React, { FC, useState } from "react";
+import { theme } from "../../../theme/color";
 
 // 👇 Components for each tab
 export const TabOne: FC<{ index: number }> = ({ index }) => (
@@ -22,7 +23,6 @@ export const TabThree: FC<{ index: number }> = ({ index }) => (
   </div>
 );
 
-// 👇 Tabs Component
 type TabsProps = {
   tabs: {
     label: string;
@@ -43,21 +43,21 @@ export const Tabs: FC<TabsProps> = ({
   orientation = "horizontal",
 }) => {
   const Panel = tabs.find((tab) => tab.index === selectedTab);
+  const isVertical = orientation === "vertical";
 
   return (
     <div
-      className={`${
-        orientation === "vertical" ? "flex flex-row gap-4" : ""
-      } ${className}`}
+      className={`w-full ${isVertical ? "flex flex-col sm:flex-row gap-4" : ""} ${className}`}
     >
+      {/* Tabs Container with grid layout */}
       <div
         role="tablist"
         aria-orientation={orientation}
         className={`${
-          orientation === "vertical"
-            ? "flex flex-col border-r border-gray-300"
-            : "flex border-b border-gray-300"
-        }`}
+          isVertical
+            ? "flex flex-row sm:flex-col border-b sm:border-b-0 sm:border-r border-gray-300"
+            : "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-8 gap-2 border-b-0 border-gray-300 "
+        } w-full sm:w-full`}
       >
         {tabs.map((tab) => (
           <button
@@ -69,25 +69,29 @@ export const Tabs: FC<TabsProps> = ({
             aria-controls={`tabpanel-${tab.index}`}
             tabIndex={selectedTab === tab.index ? 0 : -1}
             id={`btn-${tab.index}`}
-            className={`px-4 py-2 border text-sm font-medium transition ${
-              orientation === "vertical"
-                ? "border-l-4"
-                : "border-b-4"
-            } ${
+            className={`w-1/2 md:w-full lg:w-full px-4 py-2 text-sm font-medium transition rounded-md ${
               selectedTab === tab.index
-                ? "border-white-600 rounded-lg bg-white text-gray-800  border-b-0"
-                : "border-transparent hover:border-gray-300 text-gray-600"
+                ? "border  bg-white text-blue-700 border-0"
+                : "border border-transparent hover:border-gray-300 text-gray-600"
             }`}
+
+            style={{
+              borderColor: selectedTab === tab.index ? theme.primary : "transparent",
+              color: selectedTab === tab.index ? theme.primary : "",
+            }}
           >
+          
             {tab.label}
           </button>
         ))}
       </div>
+
+      {/* Tab Content */}
       <div
         role="tabpanel"
         aria-labelledby={`btn-${selectedTab}`}
         id={`tabpanel-${selectedTab}`}
-        className="p-4 bg-white border-t-0 flex-1 "
+        className="p-4 bg-white border-t-0 flex-1 w-full"
       >
         {Panel && <Panel.Component index={selectedTab} />}
       </div>

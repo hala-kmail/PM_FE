@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import CustomSelect from "../componant/CustomselectList";
-import { Option } from "../../../../../Types";
+import CustomSelect from "../pages/Projects/componants/Add Project Drawer/componant/CustomselectList";
+import { Option } from "../Types";
 import { ChevronDown } from "lucide-react";
-import CustomTextarea from "../componant/CustomTextArea";
+import CustomTextarea from "../pages/Projects/componants/Add Project Drawer/componant/CustomTextArea";
 
 export interface StrategicAlignmentProps {
   mode: "create" | "view" | "edit";
@@ -130,12 +130,7 @@ const Strategic_Alignment: React.FC<StrategicAlignmentProps> = ({ mode, projectD
         </div>
       </div>
 
-      {/* Submit Button */}
-      {(mode === "edit" || mode === "create") && (
-        <button type="submit" className="btn btn-primary">
-          {mode === "create" ? "Create Project" : "Save Changes"}
-        </button>
-      )}
+   
     </form>
   );
 };

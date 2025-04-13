@@ -1,17 +1,12 @@
 import React, { useState } from 'react';
 
-
-import { ChevronDown } from "lucide-react";
-import CustomSelect from '../../Projects/componants/Add Project Drawer/componant/CustomselectList';
-import ReferenceDateUsingValue from '../../Projects/componants/Add Project Drawer/componant/customcalender';
-import Other_Details from '../../Projects/componants/Add Project Drawer/Forms/Other Details';
-import Project_Identification from '../../Projects/componants/Add Project Drawer/Forms/Project Identification';
-import Strategic_Alignment from '../../Projects/componants/Add Project Drawer/Forms/Strategic Alignment';
-import Ownership_Responsibility from '../../Projects/componants/Add Project Drawer/Forms/Ownership& Responsibility';
+import Other_Details from '../../Forms/Other Details';
+import Project_Identification from '../../Forms/Project Identification';
+import Strategic_Alignment from '../../Forms/Strategic Alignment';
+import Ownership_Responsibility from '../../Forms/Ownership& Responsibility';
 
 
 const ProjectDetailsForm: React.FC = () => {
-    const [selected, setSelected] = useState<string | number>("");
 
 
 
@@ -20,7 +15,7 @@ const ProjectDetailsForm: React.FC = () => {
  
 
   return (
-    <form  className="w-full mx-auto p-4 bg-white p-2  ">
+    <form  className="w-full mx-auto p-4 bg-white p-2 border-t-0  ">
 
 <div className='flex flex-row mb-2 mt-2 '>
 <span className='text-[#707070] text-sm'>Project Identification</span>
@@ -29,7 +24,7 @@ const ProjectDetailsForm: React.FC = () => {
 
 </div>
 
-<div className="grid grid-cols-1  gap-6 mb-6">
+<div className="grid grid-cols-1  gap-2 ">
         <div className="flex flex-col">
          
           <Project_Identification mode={'view'}/>
@@ -41,7 +36,7 @@ const ProjectDetailsForm: React.FC = () => {
 
 </div>
 
-<div className="grid grid-cols-1  gap-6 mb-6">
+<div className="grid grid-cols-1  gap-2 ">
         <div className="flex flex-col">
          
           <Strategic_Alignment mode={'view'}/>
@@ -56,7 +51,7 @@ const ProjectDetailsForm: React.FC = () => {
 
 </div>
 
-<div className="grid grid-cols-1  gap-6 mb-6">
+<div className="grid grid-cols-1  gap-2 ">
         <div className="flex flex-col">
          
           <Ownership_Responsibility mode={'view'}/>
@@ -65,7 +60,7 @@ const ProjectDetailsForm: React.FC = () => {
         
         </div>
         
-        <div className="grid grid-cols-1  gap-6 mb-6">
+        <div className="grid grid-cols-1  gap-2 ">
         <div className="flex flex-col">
          
           <Other_Details mode={'view'}/>
