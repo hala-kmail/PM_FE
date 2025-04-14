@@ -42,8 +42,9 @@ export default function ReferenceDateUsingValue({ mode, value, onChange }: Props
           sx={{
             '& .MuiInputBase-root': {
               width: '100%',
-              border: '1px solid #d1d5db',
+              // border: '1px solid #d1d5db',
               borderRadius: '0.375rem',
+             
               backgroundColor: '#ffffff',
               color: '#4b5563',
               '&:focus': {

@@ -17,7 +17,9 @@ export const theme = {
  buttonGraytext:'#707070',
   buttonGrayborder:'#BFBFBF',
    buttonGraybg:'#F1F1F1',
-   borderred:'#FF0000'
+   borderred:'#FF0000',
+   lightTitle:'#121212',
+   projectTiltleGraybg:'#F2F2F2',
 
    
 };
@@ -39,7 +41,7 @@ export const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: '#F1F1F1', // أزرق غامق (Tailwind: blue-900)
     color: '#000000',           // أبيض
-    fontWeight: 'bold',
+    fontWeight: '600',
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,

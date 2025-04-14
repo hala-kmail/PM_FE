@@ -35,21 +35,21 @@ type TabsProps = {
   className?: string;
 };
 
-export const Tabs: FC<TabsProps> = ({
+export const Tabs: FC<TabsProps> =({
   className = "",
   tabs = [],
   selectedTab = 0,
   onClick,
   orientation = "horizontal",
 }) => {
+  
   const Panel = tabs.find((tab) => tab.index === selectedTab);
   const isVertical = orientation === "vertical";
-
   return (
     <div
-      className={`w-full ${isVertical ? "flex flex-col sm:flex-row gap-4" : ""} ${className}`}
+    className={`w-full ${isVertical ? "flex flex-col sm:flex-row gap-4" : ""} ${className}`}
     >
-      {/* Tabs Container with grid layout */}
+    {/* Tabs Container with grid layout */}
       <div
         role="tablist"
         aria-orientation={orientation}
@@ -69,7 +69,7 @@ export const Tabs: FC<TabsProps> = ({
             aria-controls={`tabpanel-${tab.index}`}
             tabIndex={selectedTab === tab.index ? 0 : -1}
             id={`btn-${tab.index}`}
-            className={`w-1/2 md:w-full lg:w-full px-4 py-2 text-sm font-medium transition rounded-md ${
+            className={`w-1/2 md:w-full lg:w-full px-4 py-2 text-sm font-medium transition rounded-t-lg ${
               selectedTab === tab.index
                 ? "border  bg-white text-blue-700 border-0"
                 : "border border-transparent hover:border-gray-300 text-gray-600"
@@ -91,8 +91,12 @@ export const Tabs: FC<TabsProps> = ({
         role="tabpanel"
         aria-labelledby={`btn-${selectedTab}`}
         id={`tabpanel-${selectedTab}`}
-        className="p-4 bg-white border-t-0 flex-1 w-full"
+      className={`p-4 bg-white border-t-0 flex-1 w-full ${
+  selectedTab === 1 ? 'rounded-b-xl' : 'rounded-t-xl'
+}`}
+
       >
+        
         {Panel && <Panel.Component index={selectedTab} />}
       </div>
     </div>

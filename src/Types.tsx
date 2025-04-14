@@ -95,3 +95,12 @@ export type PhaseType = {
   Percentage: string;
   Status: 'Completed' | 'Overdue' | 'Pending';
 };
+export type PaymentType = {
+  Payment_type: string;
+  Payment_Description: string;
+  Payment_date: string;
+  Amount: number;
+  Document_Title: string;
+  Document_Type: string;
+  Document_File: File | null; // <-- الحقل الجديد
+};

@@ -1,10 +1,10 @@
 import React from "react";
-import { FaTimes, FaPlus } from "react-icons/fa";
+import { FaTimes} from "react-icons/fa";
 // Import filter data and custom hook
-import { filterCategories } from "../../../Data/FiltesCategories";
+
 import { useFilterLogic } from "../../../hook/Add filter";
 import { FilterDrawerProps } from "../../../Types";
-import { theme } from "../../../theme/color";
+
 
 const AddTaskDrawer: React.FC<FilterDrawerProps> = ({ isOpen, onClose }) => {
   const { selectedFilters, toggleFilter } = useFilterLogic();
@@ -35,15 +35,7 @@ const AddTaskDrawer: React.FC<FilterDrawerProps> = ({ isOpen, onClose }) => {
        
       
       </div>
-      {/* <button
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg"
-          onClick={() => {
-            alert("Apply Filters");
-            onClose();
-          }}
-        >
-          Apply Filters
-        </button> */}
+     
     </div>
   );
 };

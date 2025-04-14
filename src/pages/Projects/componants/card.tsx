@@ -4,7 +4,7 @@ import { AiFillWarning } from 'react-icons/ai';
 import { BsThreeDots } from "react-icons/bs";
 import { PROJECT } from '../../../Types';
 import { useNavigate } from 'react-router-dom';
-import { riskColors } from '../../../theme/color';
+import { riskColors, theme } from '../../../theme/color';
 
 const ProjectCard: React.FC<PROJECT> = ({
   directorate,
@@ -48,11 +48,15 @@ const ProjectCard: React.FC<PROJECT> = ({
   }
 
   return (
-    <div onClick={handleClick} className="max-w-sm rounded-2xl shadow-md overflow-hidden">
+    <div onClick={handleClick} className="rounded-2xl shadow-md overflow-hidden cursor-pointer">
+
       {/* First Half - White Background */}
       <div className="bg-white p-5 space-y-4 flex flex-col">
         <div className="flex justify-between items-start">
-          <div className="text-sm text-gray-500 font-medium bg-[#F2F2F2]">{directorate}</div>
+        <div className="text-sm text-gray-500 font-medium  px-2 py-1 rounded" style={{ backgroundColor: theme.projectTiltleGraybg }}>
+  {directorate}
+</div>
+
           <BsThreeDots className="text-xl text-gray-400 hover:text-gray-600 cursor-pointer" />
         </div>
 
