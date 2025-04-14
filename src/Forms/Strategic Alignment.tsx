@@ -10,7 +10,6 @@ export interface StrategicAlignmentProps {
 }
 
 const Strategic_Alignment: React.FC<StrategicAlignmentProps> = ({ mode, projectData }) => {
-  const [selected, setSelected] = useState<string | number>("");
   const [formData, setFormData] = useState({
     row1Field1: projectData?.projectName || "",
     row1Field2: projectData?.projectDescription || "",

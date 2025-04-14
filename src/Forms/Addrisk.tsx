@@ -12,7 +12,7 @@ type Props = {
 };
 
 const Add_Risk: React.FC<Props> = ({ mode, RiskData }) => {
-  const [selected, setSelected] = useState<string | number>(RiskData?.Goal || "");
+  const [, setSelected] = useState<string | number>(RiskData?.Goal || "");
 
   const [formData, setFormData] = useState({
    
@@ -122,14 +122,7 @@ const Add_Risk: React.FC<Props> = ({ mode, RiskData }) => {
         </div>
       </div>
 
-      {/* Submit Button
-      <div className="flex justify-end mt-4">
-        {mode !== "view" && (
-          <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-lg">
-            {mode === "create" ? "Create" : "Save"}
-          </button>
-        )}
-      </div> */}
+   
     </form>
   );
 };
