@@ -50,15 +50,16 @@ export interface DropdownMenuProps {
   handleInstallClick: () => void;
 }
 // Define types for the component props
-export interface ProjectCardProps {
-  directorate: string;
-  title: string;
-  description: string;
-  program: string;
-  projectManager: string;
-  riskLevel: string;
-  progress: number;
-}
+// export interface ProjectCardProps {
+//   directorate: string;
+//   title: string;
+//   description: string;
+//   program: string;
+//   projectManager: string;
+//   riskLevel: string;
+//   progress: number;
+  
+// }
 
 export interface PROJECT {
   directorate: string;
@@ -68,8 +69,29 @@ export interface PROJECT {
   projectManager: string;
   riskLevel: string;
   progress: number;
+  stage:string;
 }
 export interface FilterDrawerProps {
   isOpen: boolean;
   onClose: () => void;
 }
+export interface MenuItem {
+  id: number;
+  title: string;
+  icon: React.ElementType;
+  path: string;
+}
+export type Option = {
+  label: string;
+  value: string | number;
+};
+export type PhaseType = {
+  Phase: string;
+  Task_Description: string;
+  Start_date: string;
+  End_date: string;
+  Weight: string;
+  duration: string;
+  Percentage: string;
+  Status: 'Completed' | 'Overdue' | 'Pending';
+};

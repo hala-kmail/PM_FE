@@ -1,9 +1,6 @@
 // SelectList.ts
-export type Option = {
-    label: string;
-    value: string | number;
-  };
-  
+
+  import { Option } from "../../../Types";
   export class SelectList {
     private options: Option[];
     private selectedValue: string | number | null = null;

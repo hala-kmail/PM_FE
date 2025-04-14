@@ -2,10 +2,11 @@ import React from 'react';
 import { FaUser } from 'react-icons/fa';
 import { AiFillWarning } from 'react-icons/ai';
 import { BsThreeDots } from "react-icons/bs";
-import { ProjectCardProps } from '../../../Types';
+import { PROJECT } from '../../../Types';
 import { useNavigate } from 'react-router-dom';
+import { riskColors } from '../../../theme/color';
 
-const ProjectCard: React.FC<ProjectCardProps> = ({
+const ProjectCard: React.FC<PROJECT> = ({
   directorate,
   title,
   description,
@@ -13,18 +14,28 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   projectManager,
   riskLevel,
   progress,
+  stage,
+
+  
 }) => {
-  const riskColors: { [key: string]: string } = {
-    "No Risk": "bg-green-100 text-green-700",
-    "Medium Risk": "bg-yellow-100 text-yellow-700",
-    "High Risk": "bg-red-100 text-red-700",
-  };
+
  
     const navigate = useNavigate();
   
     const handleClick = () => {
       const encodedTitle = encodeURIComponent(title); // عشان ما يصير مشاكل في الرابط
-      navigate(`/projects/${encodedTitle}`);
+      navigate(`/projects/${encodedTitle}`, {
+        state: {
+          directorate,
+          title,
+          description,
+          program,
+          projectManager,
+          riskLevel,
+          progress,
+          stage,
+        },
+      });
     };
   const riskClass = riskColors[riskLevel] || "bg-gray-100 text-gray-700";
 

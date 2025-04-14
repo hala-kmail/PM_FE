@@ -9,6 +9,7 @@ export const PROJECTS: PROJECT[] = [
       projectManager: "Humaid Al-Saadi",
       riskLevel: "No Risk",
       progress: 20,
+      stage:"plaining"
     },
     {
       directorate: "General Directorate of Economic Sectors",
@@ -18,5 +19,6 @@ export const PROJECTS: PROJECT[] = [
       projectManager: "Aisha Al-Naimi",
       riskLevel: "Medium Risk",
       progress: 45,
+      stage:"plaining"
     },
   ];
