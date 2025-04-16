@@ -56,7 +56,7 @@ const Add_Risk: React.FC<Props> = ({ mode, RiskData }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full mx-auto p-4 bg-white p-2">
+    <form onSubmit={handleSubmit} className="w-full mx-auto  bg-white p-2">
       {/* Budget Section */}
 
       <div className="grid grid-cols-1 sm:grid-cols-1 gap-6 mb-6">

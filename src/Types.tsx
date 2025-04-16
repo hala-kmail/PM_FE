@@ -104,3 +104,22 @@ export type PaymentType = {
   Document_Type: string;
   Document_File: File | null; // <-- الحقل الجديد
 };
+export type EscalateTaskType = {
+  User: string;
+  Task_Description: string;
+  Escalation_date: string;
+};
+
+export type ChangeProgressType = {
+  Task: string;
+  Task_month: string;
+  Completion_date: string;
+  Progress:number;
+  File: string;
+  Document_File: File | null; // <-- الحقل الجديد
+};
+
+export type CommentData = {
+  id: string;
+  content: string;
+};

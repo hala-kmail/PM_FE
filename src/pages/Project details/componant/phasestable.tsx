@@ -16,6 +16,9 @@ import { rows } from '../../../Data/PhaseTable';
 import Comment from '../../../assets/Comment.png'
 import progress from '../../../assets/Progress.png'
 import project from '../../../assets/Task Excalation.png'
+import EscalateTask from '../Drawer/EscalatetaskDrawer';
+import ChangeProgress from '../Drawer/ChangeProgressDrawer';
+import AddComment from '../Drawer/AddCommentDrawer';
 
 
 
@@ -30,73 +33,99 @@ export const getStatusChip = (status: PhaseType['Status']) => {
     }
   };
 
+  type DialogType = 'escalate' | 'progress' | 'comment' | null;
 
-
-
-
-
-export default function PhaseTable() {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const [menuRow, setMenuRow] = React.useState<PhaseType | null>(null);
-
-  const handleMenuOpen = (event: React.MouseEvent<HTMLElement>, row: PhaseType) => {
-    setAnchorEl(event.currentTarget);
-    setMenuRow(row);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-    setMenuRow(null);
-  };
-
-  return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 1000 }} aria-label="customized table">
-        <TableHead>
-          <TableRow>
-            <StyledTableCell>Phase</StyledTableCell>
-            <StyledTableCell>Task Description</StyledTableCell>
-            <StyledTableCell>Start Date</StyledTableCell>
-            <StyledTableCell>End Date</StyledTableCell>
-            <StyledTableCell>Weight</StyledTableCell>
-            <StyledTableCell>Duration</StyledTableCell>
-            <StyledTableCell>Percentage</StyledTableCell>
-            <StyledTableCell>Status</StyledTableCell>
-            <StyledTableCell align="center">Actions</StyledTableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row, idx) => (
-            <StyledTableRow key={idx}>
-              <StyledTableCell>{row.Phase}</StyledTableCell>
-              <StyledTableCell>{row.Task_Description}</StyledTableCell>
-              <StyledTableCell>{row.Start_date}</StyledTableCell>
-              <StyledTableCell>{row.End_date}</StyledTableCell>
-              <StyledTableCell>{row.Weight}</StyledTableCell>
-              <StyledTableCell>{row.duration}</StyledTableCell>
-              <StyledTableCell>{row.Percentage}</StyledTableCell>
-              <StyledTableCell>{getStatusChip(row.Status)}</StyledTableCell>
-              <StyledTableCell align="center">
-                <IconButton onClick={(e) => handleMenuOpen(e, row)}>
-                  <MoreVertIcon />
-                </IconButton>
-              </StyledTableCell>
-            </StyledTableRow>
-          ))}
-        </TableBody>
-      </Table>
-
-      <Menu
-        anchorEl={anchorEl}
-        open={Boolean(anchorEl)}
-        onClose={handleMenuClose}
-      >
-        <MenuItem onClick={handleMenuClose}>
-        <img className="mr-6 w-6 h-6 " src={project}></img>
-        Task Escalation</MenuItem>
-        <MenuItem onClick={handleMenuClose}> <img className="mr-6 w-6 h-6 " src={progress}></img>Project Progress</MenuItem>
-        <MenuItem onClick={handleMenuClose}> <img className="mr-6 w-6 h-6 " src={Comment}></img>Add Comment</MenuItem>
-      </Menu>
-    </TableContainer>
-  );
-}
+  export default function PhaseTable() {
+    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+    const [menuRow, setMenuRow] = React.useState<PhaseType | null>(null);
+    const [openDialog, setOpenDialog] = React.useState<DialogType>(null);
+  
+    const handleMenuOpen = (event: React.MouseEvent<HTMLElement>, row: PhaseType) => {
+      setAnchorEl(event.currentTarget);
+      setMenuRow(row);
+    };
+  
+    const handleMenuClose = () => {
+      setAnchorEl(null);
+    };
+  
+    const handleDialogClose = () => {
+      setOpenDialog(null);
+    };
+  
+    return (
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 1000 }} aria-label="customized table">
+          <TableHead>
+            <TableRow>
+              <StyledTableCell>Phase</StyledTableCell>
+              <StyledTableCell>Task Description</StyledTableCell>
+              <StyledTableCell>Start Date</StyledTableCell>
+              <StyledTableCell>End Date</StyledTableCell>
+              <StyledTableCell>Weight</StyledTableCell>
+              <StyledTableCell>Duration</StyledTableCell>
+              <StyledTableCell>Percentage</StyledTableCell>
+              <StyledTableCell>Status</StyledTableCell>
+              <StyledTableCell align="center">Actions</StyledTableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {rows.map((row, idx) => (
+              <StyledTableRow key={idx}>
+                <StyledTableCell>{row.Phase}</StyledTableCell>
+                <StyledTableCell>{row.Task_Description}</StyledTableCell>
+                <StyledTableCell>{row.Start_date}</StyledTableCell>
+                <StyledTableCell>{row.End_date}</StyledTableCell>
+                <StyledTableCell>{row.Weight}</StyledTableCell>
+                <StyledTableCell>{row.duration}</StyledTableCell>
+                <StyledTableCell>{row.Percentage}</StyledTableCell>
+                <StyledTableCell>{getStatusChip(row.Status)}</StyledTableCell>
+                <StyledTableCell align="center">
+                  <IconButton onClick={(e) => handleMenuOpen(e, row)}>
+                    <MoreVertIcon />
+                  </IconButton>
+                </StyledTableCell>
+              </StyledTableRow>
+            ))}
+          </TableBody>
+        </Table>
+  
+        {/* Dialogs */}
+        <EscalateTask isOpen={openDialog === 'escalate'} onClose={handleDialogClose} />
+        <ChangeProgress isOpen={openDialog === 'progress'} onClose={handleDialogClose} />
+        <AddComment isOpen={openDialog === 'comment'} onClose={handleDialogClose} />
+  
+        {/* Menu */}
+        <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleMenuClose}>
+          <MenuItem
+            onClick={() => {
+              setOpenDialog('escalate');
+              handleMenuClose();
+            }}
+          >
+            <img className="mr-6 w-6 h-6" src={project} alt="escalate" />
+            Task Escalation
+          </MenuItem>
+          <MenuItem
+            onClick={() => {
+              setOpenDialog('progress');
+              handleMenuClose();
+            }}
+          >
+            <img className="mr-6 w-6 h-6 " src={progress} alt="progress" />
+            Project Progress
+          </MenuItem>
+          <MenuItem
+            onClick={() => {
+              setOpenDialog('comment');
+              handleMenuClose();
+            }}
+          >
+            <img className="mr-6 w-6 h-6 " src={Comment} alt="comment" />
+            Add Comment
+          </MenuItem>
+        </Menu>
+      </TableContainer>
+    );
+  }
+  

@@ -1,12 +1,14 @@
 import { theme } from '../../theme/color';
+import ProgramCardsGrid from '../statestic/ProgramCardsGrid';
+import StatisticCard from '../statestic/StatisticCards';
+import StatusCardsGrid from '../statestic/StatusCardGrid';
 import Card from './components/cards'; // تأكد من المسار الصحيح لمكون Card
 import Chart from './components/Chart';
-import Overall_progress_chart from './components/Overall Progress';
-import Projects_Durations_chart from './components/Projects Durations';
 
 const Homepage = () => {
   return (
     <main className="" style={{ color: theme.lightBackground }}>
+      <StatisticCard/>
       <Card />
       <div className="flex flex-col lg:flex-row justify-between mt-10 gap-6 h-full">
         {/* المخطط الرئيسي */}
@@ -16,14 +18,16 @@ const Homepage = () => {
 
 
         {/* المخططات الجانبية */}
-        <div className="w-full lg:w-1/3 flex flex-col gap-6">
+        {/* <ProgramCardsGrid /> */}
+        <StatusCardsGrid />
+        {/* <div className="w-full lg:w-1/3 flex flex-col gap-6">
           <div className="bg-white">
             <Overall_progress_chart />
           </div>
           <div className="bg-white">
             <Projects_Durations_chart />
           </div>
-        </div>
+        </div> */}
       </div>
     </main>
   );

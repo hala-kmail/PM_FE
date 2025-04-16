@@ -17,8 +17,14 @@ export const theme = {
    buttonGraybg:'#F1F1F1',
    borderred:'#FF0000',
    lightTitle:'#121212',
-   projectTiltleGraybg:'#F2F2F2',
-
+   gold_color_bg:'#F2F2F2',
+  blue_color_bg:'#E5F0FF',
+  blue2_color_bg:'#FFFFFFCC', 
+   green_color_bg:'#E8FDF1', 
+   red_color_bg:'#FDE8EB',
+   red_color:'#EA3957',
+   blue_color:'#2682FF',
+   green_color:'#0E9347'
    
 };
 

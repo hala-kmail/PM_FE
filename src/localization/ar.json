@@ -37,7 +37,11 @@
       "cards": {
         "totalEstimated": "إجمالي المبلغ المقدر",
         "totalPayment": "إجمالي الدفعات",
-        "totalProjects": "إجمالي المشاريع"
+        "totalProjects": "إجمالي المشاريع",
+        "totalInitiativeProjects": "مشاريع المبادرة الشاملة",
+        "totalCommitteeProjects": "إجمالي مشاريع اللجنة",
+        "ofAchievements": "من الإنجازات",
+        "projectTnTthisMonth": "المشروع في هذا الشهر"
       },
       "charts": {
         "taskByEntity": "المهام حسب الجهة",

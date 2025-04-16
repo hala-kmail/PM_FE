@@ -36,7 +36,12 @@
   "cards": {
     "totalEstimated": "Total Estimated Amount",
     "totalPayment": "Total Payment",
-    "totalProjects": "Total Projects"
+    "totalProjects": "Total Projects",
+    "totalInitiativeProjects": "Total Initiative Projects",
+    "totalCommitteeProjects": "Total Committee Projects",
+    "ofAchievements": "Of Achievements",
+    "projectTnTthisMonth": "Project in this month"
+
   },
   "charts": {
     "taskByEntity": "Task By Entity",

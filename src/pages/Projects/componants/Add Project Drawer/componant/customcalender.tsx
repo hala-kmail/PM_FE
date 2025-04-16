@@ -32,25 +32,55 @@ export default function ReferenceDateUsingValue({ mode, value, onChange }: Props
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DemoContainer components={['DatePicker']}>
+      <DemoContainer components={['DatePicker']}   sx={{
+    p: 0, // إزالة البادينج
+    margin: 0,
+   
+   
+  }}>
         <DatePicker
           value={selectedDate}
           onChange={handleChange}
           views={['year', 'month', 'day']}
-          className='w-full'
+          className='w-full border-gray-300 '
           disabled={mode === "view"}
           sx={{
             '& .MuiInputBase-root': {
               width: '100%',
-              // border: '1px solid #d1d5db',
-              borderRadius: '0.375rem',
-             
+              // border: '1px solid #664747FF',
+              borderRadius: '0.5rem',
               backgroundColor: '#ffffff',
               color: '#4b5563',
-              '&:focus': {
-                outline: 'none',
-                borderColor: '#3b82f6',
-                boxShadow: '0 0 0 2px rgba(59, 130, 246, 0.5)',
+              '& .MuiOutlinedInput-notchedOutline': {
+                borderColor: '#d1d5db', // ← لون البوردر الثابت
+              },
+              '&:hover .MuiOutlinedInput-notchedOutline': {
+                borderColor: '#d1d5db', // ← نفس اللون عند الهوفر
+              },
+              '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+              
+      outline: 'none',
+      border: '2px solid #3b82f6',
+      // borderColor: '#3b82f6',
+     
+     
+  
+              },
+            },
+            '& .MuiOutlinedInput-input': {
+              p: '0.75rem',
+              lineHeight: 1.6,
+              border: 'none',
+              height:'unset'
+            },
+            '& .MuiOutlinedInput-notchedOutline': {
+              border: '1px solid #d1d5db',
+              borderRadius: '0.5rem',
+              lineHeight: 1.5,
+            '&:hover': {
+                outline: 'none', 
+               
+                // boxShadow: '0 0 0 2px rgba(59, 130, 246, 0.5)',
               },
             },
           }}

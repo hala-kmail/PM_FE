@@ -25,7 +25,7 @@ const CustomTextarea: React.FC<Props> = ({
       rows={rows}
       cols={cols}
       disabled={disabled}  // إضافة خاصية disabled
-      className="w-full p-4 border border-gray-300 rounded-lg resize-none text-gray-700 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200 ease-in"
+      className="w-full p-4 border border-gray-300 rounded-lg  text-gray-700 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200 ease-in"
     />
   );
 };

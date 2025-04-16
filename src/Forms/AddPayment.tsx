@@ -8,6 +8,7 @@ import { Option } from '../Types';
 import CustomInput from '../pages/Projects/componants/Add Project Drawer/componant/CustomInput';
 import { theme } from '../theme/color';
 import { FaTimes } from 'react-icons/fa';
+import CustomFileUpload from '../pages/Projects/componants/Add Project Drawer/componant/CustomFileUpload';
 
 type Props = {
   mode: "create" | "view" | "edit";
@@ -48,7 +49,7 @@ const Add_Payment: React.FC<Props> = ({ mode, PaymentData }) => {
     { label: "pay2", value: "pay2" },
   ];
 
-  const handleChange = (field: string, value: string | number) => {
+  const handleChange = (field: string, value: string | number | File |null) => {
     if (mode === "edit" || mode === "create") {
       setFormData((prev) => ({
         ...prev,
@@ -63,7 +64,7 @@ const Add_Payment: React.FC<Props> = ({ mode, PaymentData }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full mx-auto bg-white p-4">
+    <form onSubmit={handleSubmit} className="w-full mx-auto bg-white ">
       {/* Payment Type */}
       <div className="grid grid-cols-1 sm:grid-cols-1 gap-6 mb-5">
         <div className="flex flex-col gap-2">
@@ -188,37 +189,19 @@ const Add_Payment: React.FC<Props> = ({ mode, PaymentData }) => {
               </div>
             </div>
 
-            {/* File Upload */}
-            <div className="flex flex-col gap-2">
-
-  <label
-    htmlFor="file-upload"
-    className="w-full border border-dashed rounded-lg py-7 flex items-center justify-center"
-    style={{
-           color: theme.buttonGraytext,
-           borderColor: theme.buttonGrayborder,
-           
-         }}
-  >
-    <div className="flex items-center gap-2 text-gray-500 text-sm">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-5 w-5"
-        viewBox="0 0 20 20"
-        fill="currentColor"
-      >
-        <path d="M3 16a2 2 0 002 2h10a2 2 0 002-2v-5h-2v5H5v-5H3v5z" />
-        <path d="M7 9V5h2v4h2V5h2v4h3l-6 6-6-6h3z" />
-      </svg>
-      <span>Upload File Or Drag Drop It Here</span>
-    </div>
-    <input
-      id="file-upload"
-      type="file"
-      className="hidden"
-    />
-  </label>
-</div>
+  <CustomFileUpload onFileSelect={(file) => handleChange("Document_File", file)} />
+            
+{/*             
+             <div className="flex justify-end mt-4">
+  {mode !== "view" && (
+    <button
+      type="submit"
+      className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+    >
+      {mode === "edit" ? "Update" : "Create"}
+    </button>
+  )}
+</div> */}
 
           </div>
         )}
